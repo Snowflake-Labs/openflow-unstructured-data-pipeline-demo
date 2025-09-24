@@ -1,0 +1,16 @@
+slot_number,headliner,venue_area,time_slot,entry_fee,max_attendance,day
+301,Urban Prophet,Main Plaza,2025-08-01 21:00,145.00,75000,Thursday
+302,Echo Queen,Main Plaza,2025-08-01 19:15,135.00,75000,Thursday
+303,Neon Collective,Dance Zone,2025-08-01 20:00,125.00,40000,Thursday
+304,Feline Groove,Central Stage,2025-08-01 18:30,130.00,50000,Thursday
+305,Prism Creatures,Indie Corner,2025-08-01 17:00,85.00,15000,Thursday
+306,Metro Flow,Main Plaza,2025-08-02 20:30,140.00,75000,Friday
+307,Dream Bridge,Central Stage,2025-08-02 19:00,118.00,50000,Friday
+308,Liquid Aurora,Dance Zone,2025-08-02 22:00,135.00,40000,Friday
+309,Velvet Haze,Indie Corner,2025-08-02 16:30,78.00,15000,Friday
+310,Digital Chaos,Family Stage,2025-08-02 15:00,65.00,8000,Friday
+311,Soul Architect,Main Plaza,2025-08-03 21:30,150.00,75000,Saturday
+312,Indie Claire,Central Stage,2025-08-03 17:30,95.00,50000,Saturday
+313,Bass Resurrection,Dance Zone,2025-08-03 23:00,128.00,40000,Saturday
+314,Morning Feast,Indie Corner,2025-08-03 18:00,88.00,15000,Saturday
+315,Revolution Sound,Lakeside Arena,2025-08-03 16:00,92.00,20000,Saturday

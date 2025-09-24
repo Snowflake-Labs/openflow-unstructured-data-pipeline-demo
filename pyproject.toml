@@ -1,0 +1,12 @@
+[project]
+name = "unstructured-data-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "python-dotenv>=1.1.1",
+    "slack-bolt>=1.25.0",
+    "slack-sdk>=3.23.0",
+    "pandas>=2.0.0",
+]

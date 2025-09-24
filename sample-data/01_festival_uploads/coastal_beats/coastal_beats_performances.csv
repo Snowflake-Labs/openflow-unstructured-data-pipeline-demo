@@ -1,0 +1,13 @@
+performance_id,act_name,stage_location,show_time,price_tier,weather_backup,city
+401,Metal Storm,Ocean Stage,2025-08-10 20:00,Premium,Indoor Arena,San Francisco
+402,Country Rose,Mountain View,2025-08-10 18:30,Standard,Covered Pavilion,San Francisco
+403,Solar Collective,Ocean Stage,2025-08-10 22:30,Premium,Indoor Arena,San Francisco
+404,Dark Wave,Park Stage,2025-08-10 16:00,Budget,Small Venue,San Francisco
+405,Native Sons,Mountain View,2025-08-11 17:00,Standard,Covered Pavilion,San Francisco
+406,Urban Mystic,Ocean Stage,2025-08-11 21:00,Premium,Indoor Arena,San Francisco
+407,Luna Bliss,Mountain View,2025-08-11 19:30,Standard,Covered Pavilion,San Francisco
+408,Stage Drama,Park Stage,2025-08-11 15:30,Budget,Small Venue,San Francisco
+409,Ocean Republic,Ocean Stage,2025-08-12 19:00,Premium,Indoor Arena,San Francisco
+410,Field Runner,Park Stage,2025-08-12 14:00,Budget,Small Venue,San Francisco
+411,Sister Harmony,Mountain View,2025-08-12 20:30,Standard,Covered Pavilion,San Francisco
+412,Cosmic Journey,Park Stage,2025-08-12 17:30,Budget,Small Venue,San Francisco

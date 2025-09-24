@@ -1,0 +1,122 @@
+# Markdownlint configuration for Festival Operations Demo
+# See https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+# Default rule state
+default: true
+
+# Rule customizations
+MD001: true # Heading levels should only increment by one level at a time
+MD003: # Heading style
+  style: "atx" # Use # for headers instead of underlines
+
+MD004: # Unordered list style
+  style: "dash" # Use - for unordered lists
+
+MD005: true # Inconsistent indentation for list items
+MD006: true # Consider starting bulleted lists at the beginning of the line
+MD007: # Unordered list indentation
+  indent: 2 # Use 2 spaces for list indentation
+
+MD009: # Trailing spaces
+  br_spaces: 2 # Allow 2 trailing spaces for line breaks
+
+MD010: true # Hard tabs
+MD011: true # Reversed link syntax
+MD012: true # Multiple consecutive blank lines
+MD013: # Line length
+  line_length: 120
+  headings: false # Don't check line length in headings
+  tables: false # Don't check line length in tables
+  code_blocks: false # Don't check line length in code blocks
+
+MD014: true # Dollar signs used before commands without showing output
+MD018: true # No space after hash on atx style heading
+MD019: true # Multiple spaces after hash on atx style heading
+MD020: true # No space inside hashes on closed atx style heading
+MD021: true # Multiple spaces inside hashes on closed atx style heading
+MD022: true # Headings should be surrounded by blank lines
+MD023: true # Headings must start at the beginning of the line
+MD024: # Multiple headings with the same content
+  siblings_only: true # Allow same heading text at different levels
+
+MD025: # Multiple top-level headings in the same document
+  level: 1 # Only allow one H1 per document
+
+MD026: # Trailing punctuation in heading
+  punctuation: ".,;:!?"
+
+MD027: true # Multiple spaces after blockquote symbol
+MD028: true # Blank line inside blockquote
+MD029: # Ordered list item prefix
+  style: "ordered" # Use 1. 2. 3. instead of 1. 1. 1.
+
+MD030: # Spaces after list markers
+  ul_single: 1 # 1 space after unordered list marker
+  ul_multi: 1 # 1 space after unordered list marker for multi-line
+  ol_single: 1 # 1 space after ordered list marker
+  ol_multi: 1 # 1 space after ordered list marker for multi-line
+
+MD031: true # Fenced code blocks should be surrounded by blank lines
+MD032: true # Lists should be surrounded by blank lines
+MD033: # Inline HTML
+  allowed_elements: ["br", "sub", "sup", "kbd", "mark"] # Allow some HTML tags
+
+MD034: true # Bare URL used
+MD035: true # Horizontal rule style
+MD036: true # Emphasis used instead of a heading
+MD037: true # Spaces inside emphasis markers
+MD038: true # Spaces inside code span elements
+MD039: true # Spaces inside link text
+MD040: true # Fenced code blocks should have a language specified
+MD041: true # First line in a file should be a top-level heading
+MD042: true # No empty links
+MD043: true # Required heading structure
+MD044: # Proper names should have the correct capitalization
+  names:
+    ["Slack", "Snowflake", "OpenFlow", "Apache NiFi", "CSV", "JSON", "API", "VIP", "GitHub", "JavaScript", "Python"]
+  code_blocks: false # Don't check proper names in code blocks
+
+MD045: true # Images should have alternate text (alt text)
+MD046: # Code block style
+  style: "fenced" # Use ``` instead of indented code blocks
+
+MD047: true # Files should end with a single newline character
+MD048: # Code fence style
+  style: "backtick" # Use ``` instead of ~~~
+
+MD049: # Emphasis style
+  style: "asterisk" # Use *emphasis* instead of _emphasis_
+
+MD050: # Strong style
+  style: "asterisk" # Use **strong** instead of __strong__
+
+MD051: true # Link fragments should be valid
+MD052: true # Reference links and images should use a label that is defined
+MD053: true # Link and image reference definitions should be needed
+
+# File-specific overrides
+overrides:
+  # Ignore line length in CSV files (if markdownlint processes them)
+  "**/*.csv":
+    MD013: false
+
+  # Relax some rules for auto-generated files
+  "**/slack-manifests/*.json":
+    MD013: false
+    MD033: false
+
+  # README files can have multiple H1s (for badges, etc.)
+  "**/README.md":
+    MD025: false
+    MD041: false
+
+  # Setup guides can have longer lines for code examples
+  "**/slack_workspace_setup.md":
+    MD013:
+      line_length: 150
+    MD024: false # Allow duplicate headers in setup guide
+
+  # Demo guides can be more flexible with structure
+  "**/demo_bot_usage_guide.md":
+    MD024:
+      allow_different_nesting: true

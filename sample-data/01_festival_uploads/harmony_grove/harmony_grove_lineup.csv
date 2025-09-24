@@ -1,0 +1,16 @@
+show_id,performer,location,date_time,ticket_cost,capacity
+201,Thunder Collective,Main Arena,2025-06-14 21:00,125.00,50000
+202,Golden Voice,Main Arena,2025-06-14 19:00,115.00,50000
+203,Forge Masters,Main Arena,2025-06-15 22:00,135.00,50000
+204,Fire Brigade,Main Arena,2025-06-15 20:00,130.00,50000
+205,Midnight Society,East Stage,2025-06-14 18:30,95.00,25000
+206,The Collective,East Stage,2025-06-15 17:30,98.00,25000
+207,Dream Walker,Forest Pavilion,2025-06-14 16:00,75.00,8000
+208,Mystic Journey,Forest Pavilion,2025-06-15 15:30,78.00,8000
+209,Ember Thieves,Grove Tent,2025-06-14 17:00,72.00,6000
+210,Morning Glory,Grove Tent,2025-06-15 16:30,74.00,6000
+211,Crown Jewels,East Stage,2025-06-16 19:30,102.00,25000
+212,Bass Feline,Forest Pavilion,2025-06-16 14:00,69.00,8000
+213,Lizard Kings,Amphitheater,2025-06-16 18:00,88.00,12000
+214,Desert Nomad,Amphitheater,2025-06-16 15:00,82.00,12000
+215,Vinyl Dreams,Grove Tent,2025-06-16 13:00,65.00,6000
