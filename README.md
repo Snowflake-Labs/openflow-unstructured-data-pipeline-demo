@@ -1,6 +1,11 @@
 # Snowflake OpenFlow: Unstructured Data Pipeline Demo
 
-Transform your Google Drive business documents into actionable strategic intelligence with Snowflake Intelligence and Cortex Search
+Transform your Google Drive business documents into actionable strategic intelligence with Snowflake Intelligence  
+and Cortex Search
+
+> **⚠️ IMPORTANT PREREQUISITE**: This demo requires **Snowflake OpenFlow**, which is currently available only  
+> for **Enterprise accounts** as **BYOC (Bring Your Own Cloud)** or **SPCS (Snowpark Container Services)  
+> Public Preview**. Contact your Snowflake account team to enable OpenFlow access.
 
 ## 🚀 Executive Summary
 
@@ -113,8 +118,11 @@ reducing time-to-insight by 90% and democratizing access to organizational knowl
 
 **Snowflake Requirements**:
 
-- **Account**: Active Snowflake account in AWS Commercial Regions  
-- **OpenFlow**: BYOC or Snowflake Deployment configured
+- **Account**: **Enterprise Snowflake account** in AWS Commercial Regions  
+- **OpenFlow**: **Available only for Enterprise accounts as BYOC (Bring Your Own Cloud) or SPCS  
+  (Snowpark Container Services) Public Preview**
+  - This demo requires Snowflake OpenFlow which is currently in Public Preview
+  - Contact your Snowflake account team to enable OpenFlow access
 - **Service User**: SERVICE type user with key-pair authentication
 - **Secrets Manager**: AWS/Azure/HashiCorp recommended for production
 - **Cortex Search**: Enabled for document intelligence queries
@@ -174,8 +182,10 @@ data pipeline and indexed by Cortex Search for intelligent document retrieval.*
 
 ### 📊 Analytics & Demo Materials
 
-- **[Analytics Documentation](./analytics/README.md)** - Complete business intelligence analysis and demo execution guide
-- **[Demo Execution Guide](./analytics/demo_execution_guide.md)** - Step-by-step presenter guide with Google Drive setup
+- **[Analytics Documentation](./analytics/README.md)** - Complete business intelligence analysis and demo  
+  execution guide
+- **[Demo Execution Guide](./analytics/demo_execution_guide.md)** - Step-by-step presenter guide with  
+  Google Drive setup
 - **[Document Intelligence Analysis](./analytics/document_intelligence_analysis.md)** - Comprehensive analytics  
   opportunities and Cortex Search scenarios
 
@@ -214,7 +224,8 @@ data pipeline and indexed by Cortex Search for intelligent document retrieval.*
 
 ### For Business Analysis
 
-1. **Explore** [Document Intelligence Analysis](./analytics/document_intelligence_analysis.md) for analytics opportunities
+1. **Explore** [Document Intelligence Analysis](./analytics/document_intelligence_analysis.md) for analytics  
+   opportunities
 2. **Review** [Sample Queries](./analytics/document_intelligence_analysis.md#cortex-search-query-opportunities)  
    for business scenarios
 3. **Understand**  
@@ -261,8 +272,7 @@ data pipeline and indexed by Cortex Search for intelligent document retrieval.*
 
 **Ready to transform your unstructured business documents into strategic intelligence?**
 
-**Contact your Snowflake team for a customized demonstration using your organization's actual  
-business documents.**
+Contact your Snowflake team for a customized demonstration using your organization's actual business documents.
 
 ---
 
