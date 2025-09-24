@@ -3,7 +3,6 @@
 version: "3"
 
 vars:
-  SCRIPTS_DIR: "{{.USER_WORKING_DIR}}/scripts"
   DOCS_DIR: "{{.USER_WORKING_DIR}}/sample-data/google-drive-docs"
   GOOGLE_DRIVE_DIR: "{{.HOME}}/Google\ Drive/Shared\ drives/Festival\ Operations"
 

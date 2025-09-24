@@ -198,7 +198,6 @@ data pipeline and indexed by Cortex Search for intelligent document retrieval.*
 
 ### 🛠️ Technical Resources
 
-- **[Scripts & Utilities](./scripts/README.md)** - Supporting utilities and logging frameworks
 - **[SQL & Database](./sql/)** - Cortex Search service definitions and supporting queries
 - **[Configuration](./Taskfile.yml)** - Automated tasks for document processing and demo setup
 

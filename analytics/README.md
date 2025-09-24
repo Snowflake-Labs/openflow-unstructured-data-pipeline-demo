@@ -98,7 +98,6 @@ This directory contains comprehensive analysis and demo guidance for the Snowfla
 
 ### Demo Tools
 
-- `../scripts/` - Conversation simulation and Slack integration tools
 - `../Taskfile.yml` - Automated demo setup and testing commands
 
 ### Configuration
