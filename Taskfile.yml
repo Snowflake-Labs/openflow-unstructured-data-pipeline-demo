@@ -4,7 +4,6 @@ version: "3"
 
 vars:
   DOCS_DIR: "{{.USER_WORKING_DIR}}/sample-data/google-drive-docs"
-  GOOGLE_DRIVE_DIR: "{{.HOME}}/Google\ Drive/Shared\ drives/Festival\ Operations"
 
 tasks:
   default:
@@ -36,13 +35,6 @@ tasks:
          "{{.GOOGLE_DRIVE_DIR}}/Collaborative Docs/Project Documentation" \
          "{{.GOOGLE_DRIVE_DIR}}/Formal Documents/Legal & Compliance" \
          "{{.GOOGLE_DRIVE_DIR}}/Visual Content/Operational Guides"
-
-  test-logger:
-    desc: "Test the logger utility functionality"
-    cmds:
-      - |
-        uv run {{.SCRIPTS_DIR}}/test_logger.py
-    silent: false
 
   clean-work:
     desc: "Clean up work directory files"
