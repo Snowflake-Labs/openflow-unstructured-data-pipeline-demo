@@ -213,44 +213,19 @@ function verifyDriveApiAccess(sharedDriveId) {
  * Create the complete folder structure optimized for Snowflake OpenFlow demos
  */
 function createCompleteFolderStructure(mainFolder, sharedDriveId) {
-  // Define the complete folder structure for the demo
-  // Organized into 4 strategic business categories for comprehensive document intelligence
+  // Define the folder structure matching sample-data/google-drive-docs and demo execution guide
+  // EXACTLY matches the structure in sample-data/google-drive-docs/ for perfect alignment
   const folderStructure = [
-    // Category 1: Strategic Planning & Executive Intelligence
-    'Strategic Planning',
-    'Strategic Planning/Market Analysis',
-    'Executive Meetings', 
-    'Executive Meetings/Board Archives',
-    'Financial Reports',
-    'Financial Reports/Budget Planning',
-    
-    // Category 2: Operations Excellence & Technology Modernization  
-    'Projects',
-    'Projects/Infrastructure',
-    'Operations',
-    'Operations/Procedures',
+    // Main folders only - matches sample data structure exactly
     'Analysis',
-    'Analysis/Performance Reports',
-    
-    // Category 3: Compliance & Risk Management
     'Compliance', 
-    'Compliance/Policies',
-    'Vendors',
-    'Vendors/Contracts',
-    
-    // Category 4: Knowledge Management & Staff Development
+    'Executive Meetings',
+    'Financial Reports',
+    'Operations',
+    'Projects',
+    'Strategic Planning',
     'Training',
-    'Training/Staff Development',
-    
-    // Additional organizational folders for comprehensive demo
-    'Presentations',
-    'Presentations/Executive Briefings',
-    'Collaborative Docs',
-    'Collaborative Docs/Project Documentation', 
-    'Formal Documents',
-    'Formal Documents/Legal & Compliance',
-    'Visual Content',
-    'Visual Content/Operational Guides'
+    'Vendors'
   ];
   
   // Create all folders with enhanced Drive API features
@@ -335,8 +310,8 @@ function createFolderHierarchy(parentFolder, folderPaths, sharedDriveId) {
   const folderCache = new Map();
   folderCache.set('', parentFolder); // Root folder
   
-  console.log('📂 Creating enterprise folder hierarchy...');
-  console.log('🎯 Building 4 strategic business categories...');
+  console.log('📂 Creating folder structure...');
+  console.log('🎯 Building 9 main business folders to match sample data structure...');
   console.log('');
   
   for (const path of folderPaths) {

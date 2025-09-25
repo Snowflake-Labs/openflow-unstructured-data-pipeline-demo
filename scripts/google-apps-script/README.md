@@ -70,7 +70,7 @@ After successful execution, you'll see:
 
 - ✅ **Main folder created**: "Festival Operations"
 - 💾 **Location**: Either "SHARED DRIVE" or "MY DRIVE"
-- 📁 **Complete folder structure**: 25+ organized folders
+- 📁 **Complete folder structure**: 9 main business folders (matches sample data exactly)
 - 🔗 **Folder URL**: Direct link to your demo folder
 - 📋 **Folder ID**: For OpenFlow connector configuration
 
@@ -78,60 +78,29 @@ After successful execution, you'll see:
 
 ## 📊 What Gets Created
 
-### **Business Document Categories**
+### **Business Folder Structure**
 
-The script creates a professional folder structure organized into 4 strategic categories:
+The script creates a clean folder structure that **exactly matches** the sample data and demo execution guide:
 
-#### **🎯 Category 1: Strategic Planning & Executive Intelligence**
-
-```text
-Strategic Planning/
-├── Market Analysis/
-Executive Meetings/
-├── Board Archives/
-Financial Reports/
-└── Budget Planning/
-```
-
-#### **⚡ Category 2: Operations Excellence & Technology Modernization**
+#### **📁 Main Business Folders (9 folders)**
 
 ```text
-Projects/
-├── Infrastructure/
-Operations/
-├── Procedures/
-Analysis/
-└── Performance Reports/
+Festival Operations/
+├── Analysis/              # Post-event analysis and performance reports
+├── Compliance/            # Health & safety policies
+├── Executive Meetings/    # Board meeting minutes and governance
+├── Financial Reports/     # Financial analysis and budget reports
+├── Operations/            # Venue setup manuals and procedures
+├── Projects/              # Technology modernization and infrastructure
+├── Strategic Planning/    # Market expansion and strategic documents
+├── Training/              # Staff development and customer service
+└── Vendors/               # Service agreements and contracts
 ```
 
-#### **🛡️ Category 3: Compliance & Risk Management**
+**✅ Perfect Alignment**: This structure matches both:
 
-```text
-Compliance/
-├── Policies/
-Vendors/
-└── Contracts/
-```
-
-#### **🎓 Category 4: Knowledge Management & Staff Development**
-
-```text
-Training/
-└── Staff Development/
-```
-
-#### **📁 Additional Organizational Folders**
-
-```text
-Presentations/
-├── Executive Briefings/
-Collaborative Docs/
-├── Project Documentation/
-Formal Documents/
-├── Legal & Compliance/
-Visual Content/
-└── Operational Guides/
-```
+- `sample-data/google-drive-docs/` folder structure exactly
+- Demo execution guide expected folder layout
 
 ---
 
@@ -338,7 +307,7 @@ The `clearDemoFolders()` function has been completely rewritten with Drive API:
 
 **Example Output:**
 
-```
+```text
 🔍 Searching for Festival Operations folders...
 📋 Found 1 folder(s) to delete
 
