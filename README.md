@@ -130,7 +130,7 @@ reducing time-to-insight by 90% and democratizing access to organizational knowl
 **Quick Start** (5 minutes):
 
 1. Clone repository (all document formats included)
-2. Create "Festival Operations" Google Shared Drive
+2. **Create Google Drive structure**: Use [Google Apps Script](./scripts/google-apps-script/) for automated folder creation
 3. Upload 16 demo documents per [folder structure](./sample-data/google-drive-docs/README.md)
 4. Configure OpenFlow Google Drive connector
 5. Execute natural language queries
@@ -199,7 +199,9 @@ data pipeline and indexed by Cortex Search for intelligent document retrieval.*
 ### 🛠️ Technical Resources
 
 - **[SQL & Database](./sql/)** - Cortex Search service definitions and supporting queries
-- **[Configuration](./Taskfile.yml)** - Automated tasks for document processing and demo setup
+- **[Configuration](./Taskfile.yml)** - Automated tasks for document processing and demo setup  
+- **[Taskfile Guide](./TASKFILE_README.md)** - Complete automation toolkit reference for demoers
+- **[Scripts & Automation](./scripts/)** - Automated setup tools and utilities for demo preparation
 
 ### 🎯 Quick Navigation
 
