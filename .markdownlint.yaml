@@ -58,8 +58,7 @@ MD030: # Spaces after list markers
 
 MD031: true # Fenced code blocks should be surrounded by blank lines
 MD032: true # Lists should be surrounded by blank lines
-MD033: # Inline HTML
-  allowed_elements: ["br", "sub", "sup", "kbd", "mark"] # Allow some HTML tags
+MD033: false # Inline HTML - allow for Material cards, icons, and enhanced formatting
 
 MD034: true # Bare URL used
 MD035: true # Horizontal rule style
@@ -77,8 +76,7 @@ MD044: # Proper names should have the correct capitalization
   code_blocks: false # Don't check proper names in code blocks
 
 MD045: true # Images should have alternate text (alt text)
-MD046: # Code block style
-  style: "fenced" # Use ``` instead of indented code blocks
+MD046: false # Code block style - allow mixed styles for different purposes
 
 MD047: true # Files should end with a single newline character
 MD048: # Code fence style
