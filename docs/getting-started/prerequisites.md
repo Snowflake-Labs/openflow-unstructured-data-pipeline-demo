@@ -17,7 +17,7 @@ These tools must be installed on your local machine to run the demo commands:
 - [ ] **Python >= 3.12**: Required for document processing scripts  
 - [ ] **Task**: Automation runner (Makefile in YAML)
 - [ ] **uv**: Fast Python package manager
-- [ ] **SnowSQL**: Snowflake command-line client
+- [ ] **Snow CLI**: Snowflake command-line client
 
 ### Installation Commands
 
@@ -28,7 +28,7 @@ These tools must be installed on your local machine to run the demo commands:
 
     # Install required tools
     brew install git python task-runner/tap/go-task
-    brew install --cask snowflake-snowsql
+    brew install snowflake-cli
     
     # Install uv
     curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -46,15 +46,15 @@ These tools must be installed on your local machine to run the demo commands:
     # Install uv
     curl -LsSf https://astral.sh/uv/install.sh | sh
     
-    # Install SnowSQL
-    curl -O https://sfc-repo.snowflakecomputing.com/snowsql/bootstrap/1.2/linux_x86_64/snowsql-1.2.28-linux_x86_64.bash
-    bash snowsql-1.2.28-linux_x86_64.bash
+    # Install Snow CLI
+    pip install snowflake-cli
     ```
 
 === "Windows"
     ```powershell
     # Install via Chocolatey
-    choco install git Python task Snowflake-snowsql
+    choco install git Python task
+    pip install Snowflake-cli
 
     # Install uv
     powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
@@ -70,7 +70,7 @@ git --version
 python3 --version  
 task --version
 uv --version
-snowsql --version
+snow --version
 ```
 
 ## Google Drive & Google Cloud Requirements

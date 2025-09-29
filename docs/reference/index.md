@@ -67,7 +67,7 @@ New to the demo? Start with the main documentation:
 
 1. **[Prerequisites](../getting-started/prerequisites.md){target="_blank"}** - Tool requirements and access setup
 2. **[Quick Setup](../getting-started/quick-setup.md){target="_blank"}** - 15-minute setup guide
-3. **[Demo Guide](../demo-guide/index.md){target="_blank"}** - Interactive demo walkthrough
+3. **[Getting Started](../getting-started/index.md){target="_blank"}** - Complete setup and prerequisites guide
 
 Then return here for ongoing reference during demos and development.
 

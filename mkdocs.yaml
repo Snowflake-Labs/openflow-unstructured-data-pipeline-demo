@@ -167,11 +167,12 @@ nav:
       - Prerequisites: getting-started/prerequisites.md
       - Quick Setup: getting-started/quick-setup.md
       - Setup OpenFlow Connector: getting-started/setup-workflow.md
-  - Demo Guide:
-      - Demo Overview: demo-guide/index.md
-      - Execution Guide: demo-guide/execution-guide.md
-      - Sample Questions: demo-guide/sample-questions.md
-      - Business Intelligence Analysis: demo-guide/business-intelligence.md
+  - Category Demos:
+      - Demo Hub: demos/index.md
+      - Strategic Planning: demos/strategic.md
+      - Operations Excellence: demos/operations.md
+      - Compliance & Risk: demos/compliance.md
+      - Knowledge Management: demos/knowledge.md
   - Reference:
       - Overview: reference/index.md
       - Commands: reference/commands.md

@@ -24,7 +24,7 @@ Before starting, ensure you have:
     task --version   # Task (for automation commands)  
     uv --version     # uv (for Python dependencies)
     python3 --version  # Python 3.12+ (for processing)
-    snowsql --version  # SnowSQL (for database queries)
+    snow --version  # Snow CLI (for database queries)
     ```
     **Missing tools?** See [installation instructions](prerequisites.md#required-development-tools)
 
@@ -299,7 +299,7 @@ After setup, you can demonstrate:
 
     Execute the complete demo with sample business questions and interactive queries
 
-    [:octicons-arrow-right-24: Demo Execution Guide](../demo-guide/execution-guide.md)
+    [:octicons-arrow-right-24: Sample Questions](../reference/sample-questions.md){target="_blank"}
 
 - :material-chart-line:{ .lg .middle } **Business Intelligence**
 
@@ -307,7 +307,7 @@ After setup, you can demonstrate:
 
     Explore advanced analytics and strategic insights from document processing
 
-    [:octicons-arrow-right-24: Business Analysis](../demo-guide/business-intelligence.md)
+    [:octicons-arrow-right-24: Commands Reference](../reference/commands.md){target="_blank"}
 
 </div>
 

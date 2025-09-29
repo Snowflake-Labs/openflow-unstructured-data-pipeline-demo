@@ -16,7 +16,7 @@ Before configuring connectors, ensure you have a complete **OpenFlow SPCS deploy
 Following the [official Snowflake OpenFlow SPCS setup guide](https://docs.snowflake.com/en/user-guide/data-integration/openflow/setup-openflow-spcs), ensure you have:
 
 1. **✅ Core Snowflake Configuration** - Admin role, privileges, network configuration
-2. **✅ OpenFlow Deployment Created** - SPCS deployment with event table configuration  
+2. **✅ OpenFlow Deployment Created** - SPCS deployment with optional event table configuration  
 3. **✅ Runtime Role Created** - With external access integrations
 4. **✅ Runtime Created** - Associated with the runtime role
 5. **✅ Deployment Status: Running** - Ready to accept connector configurations

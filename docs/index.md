@@ -16,7 +16,7 @@
 
     Interactive walkthrough of the complete Google Drive → OpenFlow → Cortex Search pipeline
 
-    [:octicons-arrow-right-24: Demo Guide](demo-guide/index.md)
+    [:octicons-arrow-right-24: Sample Questions](reference/sample-questions.md)
 
 - :material-cog:{ .lg .middle } **Setup & Config**
 
@@ -32,7 +32,7 @@
 
     Explore real business insights from festival operations documents
 
-    [:octicons-arrow-right-24: Business Analysis](demo-guide/business-intelligence.md)
+    [:octicons-arrow-right-24: Commands Reference](reference/commands.md)
 
 </div>
 
@@ -242,7 +242,7 @@ Configure **Snowflake Intelligence** to use **Cortex Search** for natural langua
 
     Run the complete demo with sample questions
 
-    [:material-arrow-right: Execution Guide](demo-guide/execution-guide.md)
+    [:material-arrow-right: Quick Setup](getting-started/quick-setup.md)
 
 </div>
 

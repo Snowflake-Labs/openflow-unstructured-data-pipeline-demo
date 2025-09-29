@@ -134,7 +134,7 @@ ls -la ~/Google\ Drive/Shared\ drives/Festival\ Operations/
 task --list
 
 # Verify service status
-snowsql -a your_account -u your_username
+snow connection test --connection your_connection_name
 ```
 
 ## Expected Demo Results
@@ -155,7 +155,7 @@ After following the setup and using these commands, you can demonstrate:
 - **[Taskfile Guide](taskfile.md)** - Advanced automation for power users
 - **[Prerequisites](../getting-started/prerequisites.md){target="_blank"}** - Tool requirements and access setup
 - **[Quick Setup](../getting-started/quick-setup.md){target="_blank"}** - Complete 15-minute setup guide  
-- **[Demo Guide](../demo-guide/index.md){target="_blank"}** - Interactive demo walkthrough
+- **[Getting Started](../getting-started/index.md){target="_blank"}** - Complete setup and prerequisites guide
 
 ---
 

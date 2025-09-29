@@ -50,7 +50,7 @@ Official Snowflake documentation and resources for OpenFlow, Cortex Search, and 
 
 - **[REST API](https://docs.snowflake.com/en/developer-guide/sql-api)** - Snowflake REST API reference
 - **[Connectors & Drivers](https://docs.snowflake.com/en/user-guide/ecosystem)** - Third-party integrations
-- **[SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql)** - Command-line interface
+- **[Snow CLI](https://docs.snowflake.com/en/developer-guide/snowflake-cli/index)** - Modern command-line interface
 
 ## Security & Compliance
 
