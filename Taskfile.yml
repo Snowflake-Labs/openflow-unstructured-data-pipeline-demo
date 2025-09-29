@@ -363,6 +363,10 @@ tasks:
 
         echo ""
         echo "🎯 Category 1 (Strategic Planning & Executive Intelligence) copy complete!"
+        echo ""
+        echo "💡 SAMPLE QUESTIONS FOR CORTEX SEARCH DEMO:"
+        echo "   1. 'What are our 2025 expansion plans and target markets?'"
+        echo "   2. 'Show me all financial analysis and revenue projections'"
     silent: true
 
   copy-category-2-operations:
@@ -403,6 +407,10 @@ tasks:
 
         echo ""
         echo "⚡ Category 2 (Operations Excellence & Technology Modernization) copy complete!"
+        echo ""
+        echo "💡 SAMPLE QUESTIONS FOR CORTEX SEARCH DEMO:"
+        echo "   1. 'Find all technology modernization projects and their budgets'"
+        echo "   2. 'Show me venue setup procedures and safety protocols'"
     silent: true
 
   copy-category-3-compliance:
@@ -435,6 +443,10 @@ tasks:
 
         echo ""
         echo "🛡️ Category 3 (Compliance & Risk Management) copy complete!"
+        echo ""
+        echo "💡 SAMPLE QUESTIONS FOR CORTEX SEARCH DEMO:"
+        echo "   1. 'What health and safety policies are currently in effect?'"
+        echo "   2. 'Find all vendor contracts and service agreements'"
     silent: true
 
   copy-category-4-knowledge:
@@ -459,6 +471,10 @@ tasks:
 
         echo ""
         echo "🎓 Category 4 (Knowledge Management & Staff Development) copy complete!"
+        echo ""
+        echo "💡 SAMPLE QUESTIONS FOR CORTEX SEARCH DEMO:"
+        echo "   1. 'Find all training materials and staff development programs'"
+        echo "   2. 'Show me cross-functional collaboration patterns'"
     silent: true
 
   copy-all-categories:
@@ -500,4 +516,26 @@ tasks:
         echo "   2. Point to 'Festival Operations' shared drive folder"
         echo "   3. Run OpenFlow to process documents into Snowflake"
         echo "   4. Create Cortex Search service on processed data"
+        echo ""
+        echo "💡 COMPREHENSIVE SAMPLE QUESTIONS FOR CORTEX SEARCH DEMO:"
+        echo ""
+        echo "   📊 Strategic Intelligence:"
+        echo "   • 'What are our 2025 expansion plans and target markets?'"
+        echo "   • 'Show me all financial analysis and revenue projections'"
+        echo ""
+        echo "   ⚡ Operations Excellence:"
+        echo "   • 'Find all technology modernization projects and their budgets'"
+        echo "   • 'Show me venue setup procedures and safety protocols'"
+        echo ""
+        echo "   🛡️ Compliance & Risk:"
+        echo "   • 'What health and safety policies are currently in effect?'"
+        echo "   • 'Find all vendor contracts and service agreements'"
+        echo ""
+        echo "   🎓 Knowledge Management:"
+        echo "   • 'Find all training materials and staff development programs'"
+        echo "   • 'Show me cross-functional collaboration patterns'"
+        echo ""
+        echo "   🔍 Cross-Category Intelligence:"
+        echo "   • 'Which documents have the most collaboration and strategic importance?'"
+        echo "   • 'What operational risks and mitigation strategies are documented?'"
     silent: true
