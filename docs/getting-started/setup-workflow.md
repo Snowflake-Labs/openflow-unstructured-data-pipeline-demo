@@ -1,130 +1,150 @@
-# Setup Workflow
+# Setup OpenFlow Connector
 
-Visual guide showing the complete setup process for the Snowflake OpenFlow demo.
+Step-by-step visual guide for configuring the Snowflake OpenFlow Google Drive connector with screenshots.
 
-## Complete Setup Flow
+!!! info "Deployment Options"
+    This demo uses **Snowflake OpenFlow on SPCS** (Snowpark Container Services) for simplicity. The same setup can be configured using **Snowflake OpenFlow BYOC** (Bring Your Own Cloud) with identical functionality.
 
-```mermaid
-graph TD
-    A[🚀 Start Setup] --> B[📋 Prerequisites Check]
-    B --> C{✅ Requirements Met?}
-    C -->|No| D[📖 Review Prerequisites Guide]
-    C -->|Yes| E[📁 Repository Setup]
-    
-    E --> F[🔄 Install Dependencies<br/>uv sync]
-    F --> G[📊 Google Drive Setup]
-    
-    G --> H{📝 Setup Method?}
-    H -->|Automated| I[🤖 Google Apps Script<br/>Auto-create folders]
-    H -->|Manual| J[👤 Manual Drive Setup<br/>Create folders manually]
-    
-    I --> K[📄 Document Processing<br/>task convert-all-docs]
-    J --> K
-    
-    K --> L[📤 Upload to Drive<br/>task copy-all-categories]
-    L --> M[❄️ Snowflake Configuration]
-    
-    M --> N[🔗 OpenFlow Connector<br/>Google Drive (Cortex connect)]
-    N --> O[🧠 Auto Cortex Search<br/>Service Created]
-    
-    O --> P[✅ Demo Ready!<br/>Natural Language Queries]
-    
-    %% Styling
-    classDef startStyle fill:#e8f5e8,stroke:#28a745,stroke-width:2px
-    classDef processStyle fill:#f8f9fa,stroke:#6c757d,stroke-width:2px
-    classDef decisionStyle fill:#fff3cd,stroke:#ffc107,stroke-width:2px
-    classDef autoStyle fill:#cce5ff,stroke:#007bff,stroke-width:2px
-    classDef endStyle fill:#d4edda,stroke:#28a745,stroke-width:2px
-    
-    class A,P startStyle
-    class B,E,F,G,I,J,K,L,M,N endStyle
-    class C,H decisionStyle
-    class O autoStyle
-```
+## Prerequisites: OpenFlow SPCS Deployment
 
-## Time Breakdown
+Before configuring connectors, ensure you have a complete **OpenFlow SPCS deployment and runtime** ready:
 
-```mermaid
-gantt
-    title Setup Timeline (Total: ~15 minutes)
-    dateFormat X
-    axisFormat %M min
-    
-    section Prerequisites
-    Check requirements     :0, 2
-    
-    section Repository
-    Clone & install        :2, 4
-    
-    section Google Drive
-    Setup method choice    :4, 5
-    Folder creation       :5, 8
-    Document conversion   :8, 11
-    
-    section Snowflake
-    Database setup        :11, 13
-    OpenFlow connector    :13, 15
-    
-    section Validation
-    Test queries          :15, 16
-```
+![OpenFlow SPCS Overview](../assets/images/openflow_spcs_overview.png)
 
-## Setup Methods Comparison
+**Required Setup (completed by Snowflake Administrator):**
 
-```mermaid
-graph LR
-    subgraph "🤖 Automated Setup (Recommended)"
-        A1[Google Apps Script] --> A2[Auto-create folders]
-        A2 --> A3[Upload documents]
-        A3 --> A4[5 minutes total]
-    end
-    
-    subgraph "👤 Manual Setup"
-        B1[Create shared drive] --> B2[Manual folder creation]
-        B2 --> B3[Upload documents]
-        B3 --> B4[8-10 minutes total]
-    end
-    
-    classDef autoStyle fill:#d4edda,stroke:#28a745,stroke-width:2px
-    classDef manualStyle fill:#f8f9fa,stroke:#6c757d,stroke-width:2px
-    
-    class A1,A2,A3,A4 autoStyle
-    class B1,B2,B3,B4 manualStyle
-```
+Following the [official Snowflake OpenFlow SPCS setup guide](https://docs.snowflake.com/en/user-guide/data-integration/openflow/setup-openflow-spcs), ensure you have:
 
-## Key Success Indicators
+1. **✅ Core Snowflake Configuration** - Admin role, privileges, network configuration
+2. **✅ OpenFlow Deployment Created** - SPCS deployment with event table configuration  
+3. **✅ Runtime Role Created** - With external access integrations
+4. **✅ Runtime Created** - Associated with the runtime role
+5. **✅ Deployment Status: Running** - Ready to accept connector configurations
 
-After completing setup, you should see:
-
-✅ **Google Drive Structure**
-
-```
-Festival Operations/
-├── Strategic Planning/ (3 files)
-├── Executive Meetings/ (1 file)
-├── Financial Reports/ (1 file)
-├── Projects/ (1 file)
-├── Operations/ (4 files)
-├── Compliance/ (2 files)
-├── Training/ (1 file)
-└── Analysis/ (1 file)
-```
-
-✅ **Snowflake Objects**
-
-```
-Database: openflow_demo
-Schema: festivals  
-Tables: [Auto-created by OpenFlow]
-Cortex Search Service: [Auto-generated name]
-```
-
-✅ **Demo Readiness**
-
-- Natural language queries work
-- Multi-format document search active
-- Business intelligence accessible
+!!! warning "Administrator Setup Required"
+    The OpenFlow SPCS deployment and runtime setup requires **Snowflake Administrator** privileges and must be completed before proceeding with connector configuration. This is typically a one-time setup per environment.
 
 ---
 
-Ready to start? Follow the [Quick Setup Guide](quick-setup.md) for step-by-step instructions!
+!!! important "Demo Configuration Values"
+    **Screenshots in Steps 2-4 show example values**. Replace them with your **Festival Demo settings**:
+
+    - **Database**: `openflow_festival_demo`
+    - **Schema**: `festivals_ops`  
+    - **Service User**: `festival_demo_service`
+    - **Google Drive Shared Drive**: `Festival Operations`
+    - **Cortex Search Service**: `FESTIVALS_OPS_SEARCH_SERVICE` (auto-created)
+
+## Step 1: Access OpenFlow Connectors
+
+Navigate to **OpenFlow** in your Snowflake account and access the connectors list:
+
+![OpenFlow Connectors List](../assets/images/openflow_unstruct_connectors_list.png)
+
+**Available Connectors**: Choose "Google Drive" for unstructured document processing
+
+## Step 2: Configure Google Drive Source
+
+Set up the Google Drive source parameters for your Festival Operations shared drive:
+
+![Google Drive Source Parameters](../assets/images/openflow_connector_gdrive_source_parameters.png)
+
+**Key Configuration:**
+
+- **Shared Drive**: Select "Festival Operations"
+- **Service Account**: Upload your JSON key file
+- **Folder Structure**: Include all document categories
+
+## Step 3: Set Destination Parameters
+
+Configure the Snowflake destination for processed documents:
+
+![Google Drive Destination Parameters](../assets/images/openflow_connector_gdrive_destination_parameters.png)
+
+**Destination Configuration:**
+
+- **Database**: `openflow_festival_demo`
+- **Schema**: `festivals_ops`
+- **Service User**: `festival_demo_service`
+- **Cortex Search**: Auto-create `FESTIVALS_OPS_SEARCH_SERVICE`
+
+!!! info "SPCS Authentication"
+    With **OpenFlow SPCS deployment**, authentication uses `SNOWFLAKE_SESSION_TOKEN` automatically. No passwords or additional account credentials required - the connector inherits your current Snowflake session.
+
+## Step 4: Configure Ingestion Parameters
+
+Define how documents will be processed and ingested (inherits destination settings):
+
+![Google Drive Ingestion Parameters](../assets/images/openflow_connector_gdrive_ingestion_parameters.png)
+
+**Processing Settings:**
+
+- **Multi-format Support**: PDF, DOCX, PPTX, JPG
+- **Content Extraction**: Full document text and metadata
+- **Cortex Search Integration**: Automatic service creation
+- **Destination Inheritance**: Uses database/schema from Step 3
+
+## Step 5: Start the Connector
+
+Once all parameters are configured, deploy and start the connector:
+
+![OpenFlow Connector in Canvas](../assets/images/openflow_connector_gdrive_in_canvas.png)
+
+**Deployment Steps:**
+
+1. **Review Configuration**: Verify all settings are correct
+2. **Enable Controller Services**: Right-click canvas and enable all Controller services
+3. **Start Connector**: Begin document processing  
+4. **Monitor Progress**: Watch as documents are ingested and processed
+
+!!! success "Automatic Cortex Search Creation"
+    The connector will automatically create the `FESTIVALS_OPS_SEARCH_SERVICE` after processing the first document. No additional configuration required!
+
+## Expected Results
+
+After connector setup and initial processing:
+
+✅ **Snowflake Objects Created**
+
+```
+Database: openflow_festival_demo
+Schema: festivals_ops  
+Tables: [Auto-created by OpenFlow based on document structure]
+Cortex Search Service: FESTIVALS_OPS_SEARCH_SERVICE
+```
+
+✅ **Document Processing Status**
+
+- **Multi-format Support**: PDF, DOCX, PPTX, JPG files processed
+- **Content Extraction**: Full document text and metadata available
+- **Search Indexing**: Documents indexed for natural language queries
+
+✅ **Demo Readiness Indicators**
+
+- Natural language queries return results
+- Multi-format document search active across all business categories
+- Cortex Search service responding with business intelligence
+
+---
+
+## Next Steps
+
+<div class="grid cards" markdown>
+
+- :material-play-circle:{ .lg .middle } **Test Your Setup**
+
+    ---
+
+    Validate the connector with sample queries from the Quick Setup guide
+
+    [:octicons-arrow-right-24: Demo Validation](quick-setup.md#step-6-demo-validation-1-minute)
+
+- :material-chat-question:{ .lg .middle } **Start Demos**
+
+    ---
+
+    Access ready-to-use sample questions for business presentations
+
+    [:octicons-arrow-right-24: Sample Questions](../reference/sample-questions.md){target="_blank"}
+
+</div>

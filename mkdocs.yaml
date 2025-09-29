@@ -164,9 +164,9 @@ nav:
   - Home: index.md
   - Getting Started:
       - Overview: getting-started/index.md
-      - Setup Workflow: getting-started/setup-workflow.md
       - Prerequisites: getting-started/prerequisites.md
       - Quick Setup: getting-started/quick-setup.md
+      - Setup OpenFlow Connector: getting-started/setup-workflow.md
   - Demo Guide:
       - Demo Overview: demo-guide/index.md
       - Execution Guide: demo-guide/execution-guide.md

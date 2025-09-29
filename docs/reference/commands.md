@@ -153,9 +153,9 @@ After following the setup and using these commands, you can demonstrate:
 
 - **[Sample Questions](sample-questions.md)** - Categorized questions for demo presenters
 - **[Taskfile Guide](taskfile.md)** - Advanced automation for power users
-- **[Prerequisites](../getting-started/prerequisites.md)** - Tool requirements and access setup
-- **[Quick Setup](../getting-started/quick-setup.md)** - Complete 15-minute setup guide  
-- **[Demo Guide](../demo-guide/index.md)** - Interactive demo walkthrough
+- **[Prerequisites](../getting-started/prerequisites.md){target="_blank"}** - Tool requirements and access setup
+- **[Quick Setup](../getting-started/quick-setup.md){target="_blank"}** - Complete 15-minute setup guide  
+- **[Demo Guide](../demo-guide/index.md){target="_blank"}** - Interactive demo walkthrough
 
 ---
 

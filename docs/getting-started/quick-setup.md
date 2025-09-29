@@ -47,21 +47,45 @@ uv sync
 ### Verify Document Collection
 
 ```bash
-# Check that all 16 demo documents are present
+# Check that all demo documents are present
 ls -la sample-data/google-drive-docs/
 ```
 
-You should see folders for:
+You should see the following file structure with **16 business documents** across multiple formats:
 
-- Analysis/
-- Compliance/
-- Executive Meetings/
-- Financial Reports/
-- Operations/
-- Projects/
-- Strategic Planning/
-- Training/
-- Vendors/
+```
+sample-data/google-drive-docs/
+├── Analysis/
+│   └── Post-Event-Analysis-Summer-2024.pptx
+├── Compliance/
+│   └── Health-Safety-Policy.pdf
+├── Executive Meetings/
+│   └── Board-Meeting-Minutes-Q4-2024.docx
+├── Financial Reports/
+│   └── Q3-2024-Financial-Analysis.pdf
+├── Operations/
+│   ├── Venue-Setup-Operations-Manual-0.jpg
+│   ├── Venue-Setup-Operations-Manual-1.jpg
+│   ├── Venue-Setup-Operations-Manual-2.jpg
+│   └── Venue-Setup-Operations-Manual-3.jpg
+├── Projects/
+│   └── Sound-System-Modernization-Project-Charter.docx
+├── Strategic Planning/
+│   ├── 2025-Festival-Expansion-Strategy-0.jpg
+│   ├── 2025-Festival-Expansion-Strategy-1.jpg
+│   ├── 2025-Festival-Expansion-Strategy-2.jpg
+│   ├── 2025-Festival-Expansion-Strategy-3.jpg
+│   └── 2025-Festival-Expansion-Strategy-4.jpg
+├── Training/
+│   └── Customer-Service-Training-Guide.pptx
+└── Vendors/
+    └── Audio-Equipment-Service-Agreement.pdf
+```
+
+**Document Formats**: PDF, DOCX, PPTX, JPG - demonstrating **true multi-format document intelligence**
+
+!!! note "Source Files"
+    The `.md` files are conversion templates and not uploaded to Google Drive. The demo uses the converted formats shown above.
 
 ## Step 2: Google Drive Setup (5 minutes)
 
@@ -135,17 +159,13 @@ GRANT ALL ON DATABASE openflow_festival_demo TO festival_demo_service;
 
 ## Step 5: Cortex Search Intelligence (Automatic)
 
-!!! success "Automated Setup"
-    **Cortex Search service is created automatically** by the OpenFlow Google Drive (Cortex connect) connector. No manual SQL required!
-
-!!! important "Processing Required"
-    The search service `FESTIVALS_OPS_SEARCH_SERVICE` will only be created **after processing the first document**. Wait for document processing to complete before testing queries.
+**Cortex Search service is created automatically** by the OpenFlow Google Drive (Cortex connect) connector. No manual SQL required!
 
 ### How It Works
 
 ```mermaid
 graph LR
-    A[OpenFlow Connector] --> B[Document Processing]
+    A[OpenFlow Google Drive Connector] --> B[Document Processing]
     B --> C[Cortex Search Service<br/>🤖 Auto-Created]
     C --> D[Natural Language Queries]
     
@@ -217,11 +237,29 @@ Run these sample queries to verify everything works:
 !!! success "Ready to Use"
     The service name `FESTIVALS_OPS_SEARCH_SERVICE` will be automatically created by OpenFlow
 
-## Command Reference
+## Demo Resources
 
-For all Taskfile automation commands, sample queries, and troubleshooting:
+Your setup is complete! Access these resources for successful demos:
 
-[:material-console: **Demo Commands Reference**](../reference/commands.md){ .md-button .md-button--primary }
+<div class="grid cards" markdown>
+
+- :material-console:{ .lg .middle } **Demo Commands Reference**
+
+    ---
+
+    Complete Taskfile automation commands, SQL queries, and troubleshooting for ongoing demo usage
+
+    [:octicons-arrow-right-24: Commands Guide](../reference/commands.md){target="_blank"}
+
+- :material-chat-question:{ .lg .middle } **Sample Questions Reference**
+
+    ---
+
+    Categorized business questions organized by function for smooth demo presentations
+
+    [:octicons-arrow-right-24: Demo Questions](../reference/sample-questions.md){target="_blank"}
+
+</div>
 
 ## Expected Demo Results
 
@@ -248,20 +286,6 @@ After setup, you can demonstrate:
 
 !!! failure "Documents Not Processing"
     **Solution**: Check OpenFlow connector logs and verify file permissions
-
-### Quick Fixes
-
-```bash
-# Reset document collection
-task clean-converted-docs
-task convert-all-docs
-
-# Verify Google Drive structure
-ls -la ~/Google\ Drive/Shared\ drives/Festival\ Operations/
-
-# Check Snowflake connectivity
-snowsql -a your_account -u your_username
-```
 
 ---
 

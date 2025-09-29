@@ -28,13 +28,13 @@ Ready to set up your Snowflake OpenFlow document intelligence demo? This guide w
 
     [:octicons-arrow-right-24: Quick Setup Guide](quick-setup.md)
 
-- :material-sitemap:{ .lg .middle } **Setup Workflow**
+- :material-connection:{ .lg .middle } **Setup OpenFlow Connector**
 
     ---
 
-    **Visual guide** showing the complete setup process
+    **Visual guide** with screenshots for OpenFlow Google Drive connector configuration
 
-    [:octicons-arrow-right-24: Workflow Diagrams](setup-workflow.md)
+    [:octicons-arrow-right-24: Connector Setup Guide](setup-workflow.md)
 
 </div>
 
