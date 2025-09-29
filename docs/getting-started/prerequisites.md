@@ -7,6 +7,72 @@ Before setting up the Snowflake OpenFlow Unstructured Data Pipeline Demo, ensure
 
     Contact your Snowflake account team to enable OpenFlow access.
 
+## Required Development Tools
+
+These tools must be installed on your local machine to run the demo commands:
+
+### Essential Tools
+
+- [ ] **Git**: Version control and repository cloning
+- [ ] **Python >= 3.12**: Required for document processing scripts  
+- [ ] **Task**: Automation runner (Makefile in YAML)
+- [ ] **uv**: Fast Python package manager
+- [ ] **SnowSQL**: Snowflake command-line client
+
+### Installation Commands
+
+=== "macOS"
+    ```bash
+    # Install Homebrew if needed
+    /bin/bash -c "$(curl -fsSL <https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh>)"
+
+    # Install required tools
+    brew install git python task-runner/tap/go-task
+    brew install --cask snowflake-snowsql
+    
+    # Install uv
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
+
+=== "Linux"
+    ```bash
+    # Install via package manager (Ubuntu/Debian)
+    sudo apt update
+    sudo apt install git python3.12 python3-pip
+
+    # Install Task
+    curl -sL https://taskfile.dev/install.sh | sh
+    
+    # Install uv
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    
+    # Install SnowSQL
+    curl -O https://sfc-repo.snowflakecomputing.com/snowsql/bootstrap/1.2/linux_x86_64/snowsql-1.2.28-linux_x86_64.bash
+    bash snowsql-1.2.28-linux_x86_64.bash
+    ```
+
+=== "Windows"
+    ```powershell
+    # Install via Chocolatey
+    choco install git Python task Snowflake-snowsql
+
+    # Install uv
+    powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+    ```
+
+### Verification
+
+Test that all tools are installed correctly:
+
+```bash
+# Verify installations
+git --version
+python3 --version  
+task --version
+uv --version
+snowsql --version
+```
+
 ## Google Drive & Google Cloud Requirements
 
 ### Google Administrative Access
@@ -64,29 +130,14 @@ Before setting up the Snowflake OpenFlow Unstructured Data Pipeline Demo, ensure
 - [ ] **OpenFlow Access**: BYOC or SPCS Public Preview enabled
 - [ ] **Account Admin Access**: Ability to create services and manage users
 
-### Service User Setup
+### Account Requirements
 
-- [ ] **Service User Creation**:
+- [ ] **Admin Access**: Ability to create databases, schemas, and service users
+- [ ] **Warehouse Access**: Existing compute warehouse (e.g., `compute_wh`)
+- [ ] **Service User Capability**: Permission to create SERVICE type users
 
-   ```sql
-   CREATE USER openflow_service
-   TYPE = SERVICE
-   MUST_CHANGE_PASSWORD = FALSE;
-   ```
-
-- [ ] **Key-Pair Authentication**:
-
-   ```sql
-   ALTER USER openflow_service SET
-   RSA_PUBLIC_KEY = 'your_public_key_here';
-   ```
-
-- [ ] **Database Privileges**:
-
-   ```sql
-   GRANT USAGE ON WAREHOUSE demo_warehouse TO openflow_service;
-   GRANT CREATE SCHEMA ON DATABASE demo_db TO openflow_service;
-   ```
+!!! info "Setup Note"
+    The actual database, schema, and service user creation will be done in the [Quick Setup Guide](quick-setup.md#step-4-snowflake-configuration-3-minutes).
 
 ### Cortex Search Requirements
 
@@ -115,26 +166,13 @@ Choose one secrets management solution:
     - [ ] Authentication method configured
     - [ ] Policies for Snowflake access
 
-### Demo Environment
+## Additional Demo Environment
+
+For the complete demo setup:
 
 - [ ] **Google Shared Drive**: "Festival Operations" shared drive created
 - [ ] **Document Collection**: Access to the 16 demo business documents
 - [ ] **Network Access**: Connectivity between Google Drive and Snowflake
-
-## Development Tools (Optional)
-
-For local demo setup and testing:
-
-- [ ] **Python >= 3.12**: For running conversion scripts
-- [ ] **Task**: Makefile in YAML for automation
-- [ ] **uv**: Python packaging tool
-- [ ] **Local Tools**:
-
-   ```bash
-   # Install development dependencies
-   brew install task-runner/tap/go-task  # macOS
-   pip install uv
-   ```
 
 ## Verification Checklist
 
@@ -142,30 +180,60 @@ Before proceeding with setup, verify:
 
 ### Google Drive Access
 
-```bash
-# Test service account access
-python -c "
-from google.oauth2 import service_account
-from googleapiclient.discovery import build
+You can verify Google Drive access in two ways:
 
-credentials = service_account.Credentials.from_service_account_file(
-    'path/to/service-account.json',
-    scopes=['https://www.googleapis.com/auth/drive']
-)
-service = build('drive', 'v3', credentials=credentials)
-results = service.files().list(pageSize=10).execute()
-print('✅ Google Drive API access successful')
-"
-```
+=== "Simple Web Verification"
+    **Recommended for most users**
+
+    1. Open [Google Drive](https://drive.google.com) in browser
+    2. Navigate to your **"Festival Operations"** shared drive  
+    3. Try uploading a test file
+    4. ✅ If successful, your permissions are working
+
+=== "Advanced Python Verification"
+    **Optional - for developers who want programmatic testing**
+
+    ```bash
+    # Install dev dependencies (includes Google API libraries)
+    uv sync --dev
+    
+    # Test service account access
+    python -c "
+    from google.oauth2 import service_account
+    from googleapiclient.discovery import build
+
+    credentials = service_account.Credentials.from_service_account_file(
+        'path/to/service-account.json',
+        scopes=['https://www.googleapis.com/auth/drive']
+    )
+    service = build('drive', 'v3', credentials=credentials)
+    results = service.files().list(pageSize=10).execute()
+    print('✅ Google Drive API access successful')
+    "
+    ```
 
 ### Snowflake Connectivity
 
-```sql
--- Test Cortex Search availability
-SELECT SYSTEM$CORTEX_SEARCH_PREVIEW('test');
--- Should return: Function SYSTEM$CORTEX_SEARCH_PREVIEW does not exist or not enough privileges
--- This confirms Cortex Search is available in your account
-```
+You can verify Snowflake access in two ways:
+
+=== "Simple Web Verification"
+    **Recommended for most users**
+
+    1. Open your **Snowflake account** in browser
+    2. Navigate to **Worksheets**
+    3. Try running: `SELECT CURRENT_ACCOUNT(), CURRENT_USER();`
+    4. Check **Data > Databases** - verify you can see your databases
+    5. ✅ If successful, your account access is working
+
+=== "Advanced SQL Verification"
+    **Optional - for developers who want to test Cortex Search specifically**
+
+    ```sql
+    -- Test Cortex Search availability
+    SELECT SYSTEM$CORTEX_SEARCH_PREVIEW('test');
+    -- Should return: Function SYSTEM$CORTEX_SEARCH_PREVIEW does not exist or not enough privileges  
+    -- This confirms Cortex Search is available in your account
+    ```
 
 ### OpenFlow Access
 
@@ -213,17 +281,13 @@ Once you've completed all prerequisites:
 
 <div class="grid cards" markdown>
 
-- **Quick Setup**
+- :material-lightning-bolt:{ .lg .middle } **Quick Setup**
 
-    Fast-track setup for immediate demo capability
+    ---
 
-    [:material-arrow-right: Quick Setup Guide](quick-setup.md)
+    **Complete 15-minute setup guide** - includes Google Drive, OpenFlow, and Cortex Search configuration
 
-- **Google Drive Setup**
-
-    Detailed Google Drive connector configuration
-
-    [:material-arrow-right: Google Drive Setup](quick-setup.md#step-2-google-drive-setup-5-minutes)
+    [:octicons-arrow-right-24: Quick Setup Guide](quick-setup.md)
 
 </div>
 

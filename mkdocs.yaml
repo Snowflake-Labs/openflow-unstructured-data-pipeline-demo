@@ -172,6 +172,12 @@ nav:
       - Execution Guide: demo-guide/execution-guide.md
       - Sample Questions: demo-guide/sample-questions.md
       - Business Intelligence Analysis: demo-guide/business-intelligence.md
+  - Reference:
+      - Overview: reference/index.md
+      - Commands: reference/commands.md
+      - Sample Questions: reference/sample-questions.md
+      - Taskfile Guide: reference/taskfile.md
+      - Snowflake Documentation: reference/snowflake-links.md
 
 extra_css:
   - assets/stylesheets/extra.css

@@ -1,9 +1,9 @@
 # Quick Setup
 
-Get your Snowflake OpenFlow demo running in 15 minutes with this streamlined setup guide.
+Get your Snowflake OpenFlow demo running in 15 minutes with this streamlined setup guide. This quick setup focuses on the essential components needed to run the demo effectively, skipping optional configurations.
 
-!!! success "Perfect for Demos"
-    This quick setup focuses on the essential components needed to run the demo effectively, skipping optional configurations.
+!!! warning "Demo Data Disclaimer"
+    All business data, financial figures, and organizational information in this demo are fictitious and for demonstration purposes only.
 
 ## Prerequisites Checklist
 
@@ -17,6 +17,17 @@ Before starting, ensure you have:
 !!! tip "Need Help?"
     If you haven't completed the prerequisites, see the [detailed prerequisites guide](prerequisites.md).
 
+!!! warning "Required Tools Check"
+    **Before proceeding**, ensure you have these tools installed:
+    ```bash
+    git --version    # Git (for cloning repository)
+    task --version   # Task (for automation commands)  
+    uv --version     # uv (for Python dependencies)
+    python3 --version  # Python 3.12+ (for processing)
+    snowsql --version  # SnowSQL (for database queries)
+    ```
+    **Missing tools?** See [installation instructions](prerequisites.md#required-development-tools)
+
 ## Step 1: Repository Setup (2 minutes)
 
 ### Clone and Install Dependencies
@@ -26,11 +37,11 @@ Before starting, ensure you have:
 git clone https://github.com/kameshsampath/openflow-unstructured-data-pipeline-demo.git
 cd openflow-unstructured-data-pipeline-demo
 
-# Install Python dependencies  
-uv sync
-
-# Verify Taskfile automation
+# Verify Taskfile automation is working
 task --list
+
+# Optional: Install Python dependencies (only needed for document conversion)
+uv sync
 ```
 
 ### Verify Document Collection
@@ -59,27 +70,27 @@ You should see folders for:
 1. **Open Google Apps Script**: <https://script.google.com>
 2. **Create New Project**: Copy contents from `scripts/google-apps-script/CreateFolderStructure.gs`
 3. **Configure Shared Drive ID**: Edit the `createDemoFolders()` function
-4. **Run Script**: Creates complete folder structure automatically
+4. **Run Script**: Creates complete folder structure and uploads demo documents automatically
 
-### Option B: Manual Setup
+### Option B: Manual Web Upload
 
-```bash
-# Create local Google Drive folder structure
-task create-google-drive-folder-structure
-
-# Manually create "Festival Operations" shared drive in Google Drive
-# Upload documents per the folder structure
-```
+1. **Create Shared Drive**: In Google Drive web, create "Festival Operations" shared drive
+2. **Create Folder Structure**: Manually create these demo category folders:
+   - Strategic Planning/
+   - Operations/  
+   - Compliance/
+   - Training/
+3. **Upload Documents**: Drag and drop files from `sample-data/google-drive-docs/` into corresponding folders based on the demo categories you plan to demonstrate.
 
 ## Step 3: Document Processing (3 minutes)
 
 ### Convert Documents to All Formats
 
 ```bash
-# Convert all documents to optimized formats (PDF, DOCX, PPTX, JPG)
+# Optional: Convert all documents (only if you modified sample-data markdowns)
 task convert-all-docs
 
-# Copy documents to Google Drive location (if using local sync)
+# Copy documents to Google Drive location (only if you have local Google Drive sync)
 task copy-all-categories
 ```
 
@@ -98,17 +109,17 @@ Check your Google Drive "Festival Operations" shared drive contains:
 
 ```sql
 -- Create target database and schema
-CREATE DATABASE IF NOT EXISTS openflow_demo;
-CREATE SCHEMA IF NOT EXISTS openflow_demo.festivals;
+CREATE DATABASE IF NOT EXISTS openflow_festival_demo;
+CREATE SCHEMA IF NOT EXISTS openflow_festival_demo.festivals_ops;
 
 -- Create service user for OpenFlow
-CREATE USER IF NOT EXISTS openflow_service
+CREATE USER IF NOT EXISTS festival_demo_service
 TYPE = SERVICE
 MUST_CHANGE_PASSWORD = FALSE;
 
 -- Grant necessary privileges
-GRANT USAGE ON WAREHOUSE compute_wh TO openflow_service;
-GRANT ALL ON DATABASE openflow_demo TO openflow_service;
+GRANT USAGE ON WAREHOUSE compute_wh TO festival_demo_service;
+GRANT ALL ON DATABASE openflow_festival_demo TO festival_demo_service;
 ```
 
 ### OpenFlow Connector Configuration
@@ -118,7 +129,7 @@ GRANT ALL ON DATABASE openflow_demo TO openflow_service;
    - Name: `festival_operations_connector`
    - Service Account: Upload your JSON key file
    - Shared Drive: Select "Festival Operations"
-   - Target: `openflow_demo.festivals`
+   - Target: `openflow_festival_demo.festivals_ops`
 
 3. **Start Connector**: Begin document processing
 
@@ -126,6 +137,9 @@ GRANT ALL ON DATABASE openflow_demo TO openflow_service;
 
 !!! success "Automated Setup"
     **Cortex Search service is created automatically** by the OpenFlow Google Drive (Cortex connect) connector. No manual SQL required!
+
+!!! important "Processing Required"
+    The search service `FESTIVALS_OPS_SEARCH_SERVICE` will only be created **after processing the first document**. Wait for document processing to complete before testing queries.
 
 ### How It Works
 
@@ -149,17 +163,20 @@ graph LR
 ### Verify Automatic Setup
 
 ```sql
--- Check auto-created service (name will be generated by OpenFlow)
+-- Verify the auto-created service
 SHOW CORTEX SEARCH SERVICES;
 
 -- Test natural language query
 SELECT PARSE_JSON(
   SNOWFLAKE.CORTEX.SEARCH_PREVIEW(
-      '<AUTO_GENERATED_SERVICE_NAME>',
+      'FESTIVALS_OPS_SEARCH_SERVICE',
       '{"query": "expansion plans", "limit": 3}'
   )
 )['results'] as search_results;
 ```
+
+!!! info "Service Name"
+    The service will be auto-created as `FESTIVALS_OPS_SEARCH_SERVICE` by OpenFlow after the first document is processed.
 
 ## Step 6: Demo Validation (1 minute)
 
@@ -171,7 +188,7 @@ Run these sample queries to verify everything works:
     ```sql
     SELECT PARSE_JSON(
       SNOWFLAKE.CORTEX.SEARCH_PREVIEW(
-          'festival_service_improved',
+          'FESTIVALS_OPS_SEARCH_SERVICE',
           '{"query": "2025 expansion plans target markets", "limit": 5}'
       )
     )['results'] as strategic_insights;
@@ -181,7 +198,7 @@ Run these sample queries to verify everything works:
     ```sql  
     SELECT PARSE_JSON(
       SNOWFLAKE.CORTEX.SEARCH_PREVIEW(
-          'festival_service_improved',
+          'FESTIVALS_OPS_SEARCH_SERVICE',
           '{"query": "technology modernization projects budgets", "limit": 5}'
       )
     )['results'] as operations_insights;
@@ -191,42 +208,20 @@ Run these sample queries to verify everything works:
     ```sql
     SELECT PARSE_JSON(
       SNOWFLAKE.CORTEX.SEARCH_PREVIEW(
-          'festival_service_improved',
+          'FESTIVALS_OPS_SEARCH_SERVICE',
           '{"query": "health safety policies", "limit": 5}'
       )
     )['results'] as compliance_insights;
     ```
 
-## Quick Demo Commands Reference
+!!! success "Ready to Use"
+    The service name `FESTIVALS_OPS_SEARCH_SERVICE` will be automatically created by OpenFlow
 
-### Document Management
+## Command Reference
 
-```bash
-# Convert all document formats
-task convert-all-docs
+For all Taskfile automation commands, sample queries, and troubleshooting:
 
-# Deploy to Google Drive  
-task copy-all-categories
-
-# Clean up for reset
-task clean-converted-docs
-```
-
-### Category-Specific Uploads
-
-```bash
-# Strategic Planning & Executive docs
-task copy-category-1-strategic
-
-# Operations Excellence & Technology docs  
-task copy-category-2-operations
-
-# Compliance & Risk Management docs
-task copy-category-3-compliance
-
-# Knowledge Management & Training docs
-task copy-category-4-knowledge
-```
+[:material-console: **Demo Commands Reference**](../reference/commands.md){ .md-button .md-button--primary }
 
 ## Expected Demo Results
 
@@ -235,7 +230,7 @@ After setup, you can demonstrate:
 ✅ **Natural Language Queries**: "What are our 2025 expansion plans?"  
 ✅ **Multi-Format Search**: Find insights across PDF, DOCX, PPTX, JPG documents  
 ✅ **Business Intelligence**: Strategic, operational, compliance, and training insights  
-✅ **Executive Decision Support**: Instant access to $2.8M investment analysis  
+✅ **Executive Decision Support**: Instant access to investment analysis (demo figures)  
 ✅ **Cross-Category Analysis**: Unified view across all business functions  
 
 ## Troubleshooting
@@ -274,20 +269,25 @@ snowsql -a your_account -u your_username
 
 <div class="grid cards" markdown>
 
-- **Run Demo**
-  
-  Execute the complete demo with sample business questions
-  
-  [:material-arrow-right: Demo Execution Guide](../demo-guide/execution-guide.md)
+- :material-play-circle:{ .lg .middle } **Run Demo**
 
-- **Business Intelligence**
-  
-  Explore advanced analytics and business insights
-  
-  [:material-arrow-right: Business Analysis](../demo-guide/business-intelligence.md)
+    ---
+
+    Execute the complete demo with sample business questions and interactive queries
+
+    [:octicons-arrow-right-24: Demo Execution Guide](../demo-guide/execution-guide.md)
+
+- :material-chart-line:{ .lg .middle } **Business Intelligence**
+
+    ---
+
+    Explore advanced analytics and strategic insights from document processing
+
+    [:octicons-arrow-right-24: Business Analysis](../demo-guide/business-intelligence.md)
 
 </div>
 
 ---
 
-**🎉 Congratulations!** Your Snowflake OpenFlow document intelligence demo is ready. You can now transform unstructured business documents into queryable strategic intelligence!
+**🎉 Congratulations!** Your Snowflake OpenFlow document intelligence demo is ready. You can now transform
+unstructured business documents into queryable strategic intelligence!

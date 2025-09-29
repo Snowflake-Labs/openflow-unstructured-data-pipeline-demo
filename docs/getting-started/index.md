@@ -1,129 +1,53 @@
 # Getting Started
 
-Welcome to the Snowflake OpenFlow Unstructured Data Pipeline Demo! This comprehensive guide will get you up and running with a complete document intelligence solution in under 30 minutes.
+Ready to set up your Snowflake OpenFlow document intelligence demo? This guide will get you running in 15-30 minutes.
 
-## What You'll Build
+!!! info "What You'll Build"
+    Transform **16 business documents** from Google Drive into queryable intelligence using **OpenFlow** → **Cortex Search** → **Snowflake Intelligence**
 
-By the end of this setup, you'll have a working demo that transforms **16 realistic business documents** from Google Drive into queryable business intelligence using:
+!!! warning "Demo Data Notice"
+    All data and business information are fictitious and for demonstration purposes only.
 
-- **Google Drive** → Document storage and collaboration
-- **OpenFlow** → Document processing and extraction  
-- **Cortex Search** → Natural language query capabilities
-- **Snowflake Intelligence** → Business insights and analytics
-
-## Demo Overview
-
-<div class="demo-workflow">
-
-### Complete Pipeline Architecture
-
-```mermaid
-graph TB
-    A[Google Drive<br/>📁 16 Business Documents] --> B[OpenFlow Connector<br/>🔄 Multi-format Processing]
-    B --> C[❄️ Snowflake Tables<br/>💾 Structured Data]
-    C --> D[🧠 Cortex Search<br/>🤖 Auto-Created Service]
-    D --> E[💬 Natural Language Queries<br/>📊 Business Intelligence]
-    
-    classDef sourceStyle fill:#f8f9fa,stroke:#6c757d,stroke-width:2px
-    classDef processStyle fill:#e9ecef,stroke:#495057,stroke-width:2px
-    classDef dataStyle fill:#f8f9fa,stroke:#28a745,stroke-width:2px
-    classDef intelligenceStyle fill:#e9ecef,stroke:#007bff,stroke-width:2px
-    classDef businessStyle fill:#f8f9fa,stroke:#fd7e14,stroke-width:2px
-    
-    class A sourceStyle
-    class B processStyle
-    class C dataStyle
-    class D intelligenceStyle
-    class E businessStyle
-```
-
-</div>
-
-## Business Document Categories
-
-=== "Strategic Planning"
-    **Executive Intelligence & Decision Making**
-
-    - Market expansion strategies (JPG visualizations)
-    - Board meeting minutes (DOCX collaboration)
-    - Financial analysis & projections (PDF reports)
-    
-    !!! example "Query Example"
-        *"What are our 2025 expansion plans and expected ROI?"*
-
-=== "Operations Excellence"
-    **Technology & Infrastructure Investment**
-
-    - $2.8M sound system modernization project
-    - Venue setup operational procedures  
-    - Post-event performance analysis
-    
-    !!! example "Query Example"
-        *"Show me all technology modernization projects and budgets"*
-
-=== "Compliance & Risk"
-    **Regulatory & Risk Management**
-
-    - Health & safety policy documentation
-    - Vendor service agreements & contracts
-    - Incident analysis & mitigation strategies
-    
-    !!! example "Query Example"
-        *"What safety policies are currently in effect?"*
-
-=== "Knowledge Management"
-    **Training & Organizational Learning**
-
-    - Customer service training materials
-    - Cross-functional collaboration patterns
-    - Organizational knowledge sharing
-    
-    !!! example "Query Example"
-        *"Find all staff development and training programs"*
-
-## Quick Start Options
-
-Choose your preferred setup approach:
+## Setup Paths
 
 <div class="grid cards" markdown>
 
-- :material-clock-fast:{ .lg .middle } **15-Minute Setup**
+- :material-list-status:{ .lg .middle } **Prerequisites**
 
     ---
 
-    Perfect for quick demos and proof-of-concepts
+    **Complete requirements** and technical setup details - start here first
 
-    [:octicons-arrow-right-24: Quick Setup](quick-setup.md)
+    [:octicons-arrow-right-24: Prerequisites Guide](prerequisites.md)
 
-- :material-cog:{ .lg .middle } **Complete Setup**
+- :material-lightning-bolt:{ .lg .middle } **Quick Setup**
 
     ---
 
-    Full production-ready configuration with all features
+    **15-minute** streamlined setup for immediate demo capability
 
-    [:octicons-arrow-right-24: Prerequisites](prerequisites.md)
+    [:octicons-arrow-right-24: Quick Setup Guide](quick-setup.md)
+
+- :material-sitemap:{ .lg .middle } **Setup Workflow**
+
+    ---
+
+    **Visual guide** showing the complete setup process
+
+    [:octicons-arrow-right-24: Workflow Diagrams](setup-workflow.md)
 
 </div>
 
-## Expected Outcomes
+## What You'll Accomplish
 
-After completing the setup, you'll be able to:
+| Setup Step | Outcome | Time |
+|------------|---------|------|
+| **Google Drive Setup** | 16 business documents ready for processing | ~5 min |
+| **OpenFlow Connector** | Automatic document processing + Cortex Search creation | ~5 min |
+| **Snowflake Intelligence** | Natural language queries working | ~5 min |
 
-✅ **Query Business Documents**: Ask natural language questions about your organizational content  
-✅ **Multi-Format Intelligence**: Search across PDF, DOCX, PPTX, and JPG documents simultaneously  
-✅ **Executive Decision Support**: Get instant insights for strategic planning and operational decisions  
-✅ **Compliance Monitoring**: Instantly access policy and regulatory documentation  
-✅ **Knowledge Discovery**: Find training materials and cross-functional collaboration patterns  
-
-## Success Metrics
-
-| Capability | Traditional Approach | With Document Intelligence | Improvement |
-|------------|---------------------|---------------------------|-------------|
-| Document Search | 30-60 min manual | 5-sec natural language | **90% faster** |
-| Cross-format Analysis | Manual review required | Instant unified insights | **New capability** |
-| Executive Access | IT support needed | Self-service queries | **100% autonomy** |
-| Compliance Lookup | Hours of document hunting | Instant policy access | **95% time savings** |
+**Total: 15 minutes to working demo** 🎉
 
 ---
 
-Ready to get started? Choose your setup approach above!
+**Ready to start?** Choose your preferred setup path above!
