@@ -18,6 +18,77 @@ Show executives how their existing business documents become **actionable strate
 
 ---
 
+## Required Documents
+
+!!! note "Document Requirements for Strategic Planning Demo"
+    To run this demo successfully, ensure these documents are uploaded to your Google Drive connector:
+
+### Core Strategic Documents
+
+=== "Strategic Expansion Strategy (JPG)"
+    **📊 Strategic Planning Images**
+
+    **Source Files:** `sample-data/google-drive-docs/Strategic Planning/`
+    
+    - `2025-Festival-Expansion-Strategy-0.jpg` → Upload to: `Strategic Planning/` folder
+    - `2025-Festival-Expansion-Strategy-1.jpg` → Upload to: `Strategic Planning/` folder  
+    - `2025-Festival-Expansion-Strategy-2.jpg` → Upload to: `Strategic Planning/` folder
+    - `2025-Festival-Expansion-Strategy-3.jpg` → Upload to: `Strategic Planning/` folder
+    - `2025-Festival-Expansion-Strategy-4.jpg` → Upload to: `Strategic Planning/` folder
+    
+    **Contains:** Market expansion strategy, 15% revenue growth projections, target markets
+
+=== "Board Meeting Minutes (DOCX)"
+    **📝 Executive Decision Documentation**
+
+    **Source File:** `sample-data/google-drive-docs/Executive Meetings/Board-Meeting-Minutes-Q4-2024.docx`
+    
+    **Upload to:** `Executive Meetings/` folder as `Q4 2024 Board Minutes.docx`
+    
+    **Contains:** Strategic discussions, board-level decision context, executive priorities
+
+=== "Financial Analysis (PDF)"
+    **💰 Financial Intelligence**
+
+    **Source File:** `sample-data/google-drive-docs/Financial Reports/Q3-2024-Financial-Analysis.pdf`
+    
+    **Upload to:** `Financial Reports/` folder as `Q3 2024 Analysis.pdf`
+    
+    **Contains:** Financial projections, competitive analysis, strategic positioning
+
+### Google Drive Upload Structure
+
+```
+Your Google Drive/Festival Operations/
+├── Strategic Planning/
+│   ├── 2025-Festival-Expansion-Strategy-0.jpg
+│   ├── 2025-Festival-Expansion-Strategy-1.jpg
+│   ├── 2025-Festival-Expansion-Strategy-2.jpg
+│   ├── 2025-Festival-Expansion-Strategy-3.jpg
+│   └── 2025-Festival-Expansion-Strategy-4.jpg
+├── Executive Meetings/
+│   └── Q4 2024 Board Minutes.docx
+└── Financial Reports/
+    └── Q3 2024 Analysis.pdf
+```
+
+!!! success "Browser Upload Instructions"
+    1. **Create folder structure** in Google Drive as shown above
+    2. **Drag and drop** files from your local `sample-data/google-drive-docs/` directory
+    3. **Rename files** to match the suggested naming convention
+    4. **Verify OpenFlow connector** can access these folders
+
+!!! info "Converted Document Formats"
+    These documents were converted from markdown source files using the Taskfile:
+    - **JPG Images**: Strategic overview for dashboards and visual presentations
+    - **DOCX Files**: Collaborative documents for meeting minutes and project planning
+    - **PDF Files**: Formal financial reports and executive documentation
+
+!!! tip "Demo Customization"
+    Replace these documents with your organization's strategic planning materials to create a customized demo relevant to your business context.
+
+---
+
 ## Pre-Demo Setup (30 seconds)
 
 !!! warning "Setup Required"

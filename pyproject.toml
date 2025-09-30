@@ -1,7 +1,7 @@
 [project]
 name = "unstructured-data-pipeline"
 version = "0.1.0"
-description = "Snowflake OpenFlow Unstructured Data Pipeline Demo with Festival Operations Documents"
+description = "Unstructured Document Intelligence Demo with Festival Operations Documents"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

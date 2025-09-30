@@ -1,6 +1,6 @@
 # Prerequisites
 
-Before setting up the Snowflake OpenFlow Unstructured Data Pipeline Demo, ensure you have the following requirements in place.
+Before setting up the Unstructured Document Intelligence Demo, ensure you have the following requirements in place.
 
 !!! warning "Enterprise Requirement"
     This demo requires **Snowflake OpenFlow**, which is currently available only for **Enterprise accounts** as **BYOC (Bring Your Own Cloud)** or **SPCS (Snowpark Container Services) Public Preview**.
@@ -90,22 +90,22 @@ snow --version
   - Google Drive API
   - Google Admin SDK API
 
-### Service Account Configuration
+### Google Service Account (GSA) Configuration
 
 !!! important "Critical Setup Step"
-    Service account key creation is **disabled by default** in Google Cloud. You must enable this capability.
+    Google Service Account (GSA) key creation is **disabled by default** in Google Cloud. You must enable this capability.
 
 **Required Steps**:
 
-1. **Enable Service Account Key Creation**:
+1. **Enable Google Service Account (GSA) Key Creation**:
 
    ```bash
    gcloud org-policies reset constraints/iam.disableServiceAccountKeyCreation \
      --project=YOUR_PROJECT_ID
    ```
 
-2. **Create Service Account**:
-   - Create new service account in Google Cloud Console
+2. **Create Google Service Account (GSA)**:
+   - Create new Google Service Account (GSA) in Google Cloud Console
    - Download JSON key file securely
    - Store key file in secure location
 
@@ -197,7 +197,7 @@ You can verify Google Drive access in two ways:
     # Install dev dependencies (includes Google API libraries)
     uv sync --dev
     
-    # Test service account access
+    # Test Google Service Account (GSA) access
     python -c "
     from google.oauth2 import service_account
     from googleapiclient.discovery import build
@@ -246,10 +246,10 @@ Contact your Snowflake account team to verify:
 
 ## Common Issues & Solutions
 
-### Service Account Issues
+### Google Service Account (GSA) Issues
 
 !!! failure "Key Creation Disabled"
-    **Error**: Cannot create service account keys
+    **Error**: Cannot create Google Service Account (GSA) keys
 
     **Solution**: Enable key creation via organization policy:
     ```bash

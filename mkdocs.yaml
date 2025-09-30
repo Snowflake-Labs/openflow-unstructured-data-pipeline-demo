@@ -1,13 +1,14 @@
-site_name: Snowflake OpenFlow Unstructured Data Pipeline Demo
-site_description:
-  Complete demo showcasing Google Drive → OpenFlow → Cortex Search pipeline using festival operations business documents
+site_name: Unstructured Document Intelligence Demo
+site_description: |
+  Complete demo showcasing Snowflake OpenFlow and Cortex:
+    Google Drive → OpenFlow → Cortex Search using festival operations business documents
 site_author: Snowflake Developers
 site_url: https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo
 
 repo_name: Snowflake-Labs/openflow-unstructured-data-pipeline-demo
 repo_url: https://github.com/Snowflake-Labs/openflow-unstructured-data-pipeline-demo
 
-copyright: Copyright &copy; 2025 Snowflake Developers
+copyright: Copyright &copy; 2025 Snowflake
 
 theme:
   name: material
@@ -148,7 +149,7 @@ extra:
     - icon: material/web
       link: https://snowflake.com
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/SnowflakeDB
+      link: https://x.com/Snowflake
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/snowflake-computing
 

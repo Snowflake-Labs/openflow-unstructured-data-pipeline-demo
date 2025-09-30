@@ -52,7 +52,7 @@ Set up the Google Drive source parameters for your Festival Operations shared dr
 **Key Configuration:**
 
 - **Shared Drive**: Select "Festival Operations"
-- **Service Account**: Upload your JSON key file
+- **Google Service Account (GSA)**: Upload your JSON key file
 - **Folder Structure**: Include all document categories
 
 ## Step 3: Set Destination Parameters

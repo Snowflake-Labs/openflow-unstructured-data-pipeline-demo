@@ -2,7 +2,7 @@
  * Google Apps Script: Snowflake OpenFlow Demo Folder Structure for Enterprise Shared Drives
  * 
  * This script creates the complete folder structure in Google Workspace Shared Drives
- * for the Snowflake OpenFlow Unstructured Data Pipeline Demo.
+ * for the Unstructured Document Intelligence Demo.
  * 
  * ENTERPRISE ONLY: Designed specifically for Google Workspace users with Shared Drive access
  * REQUIRES: Google Drive API service enabled in your Apps Script project
@@ -259,7 +259,7 @@ function createMainFolderInSharedDrive(sharedDriveRoot, sharedDriveId) {
   
   // Set basic description using DriveApp
   newFolder.setDescription(
-    'Snowflake OpenFlow Unstructured Data Pipeline Demo - Enterprise Edition. ' +
+    'Unstructured Document Intelligence Demo - Enterprise Edition. ' +
     'Contains 16 multi-format business documents across 4 strategic categories: ' +
     'Strategic Planning, Operations Excellence, Compliance & Risk Management, ' +
     'and Knowledge Management. Optimized for document intelligence demonstrations ' +

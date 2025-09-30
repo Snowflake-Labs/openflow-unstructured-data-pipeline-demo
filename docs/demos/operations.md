@@ -18,6 +18,81 @@ Show operations teams how their existing documentation becomes **actionable oper
 
 ---
 
+## Required Documents
+
+!!! note "Document Requirements for Operations Excellence Demo"
+    To run this demo successfully, ensure these documents are uploaded to your Google Drive connector:
+
+### Core Operations Documents
+
+=== "Sound System Project Charter (DOCX)"
+    **🔊 Technology Modernization Project**
+
+    **Source File:** `sample-data/google-drive-docs/Projects/Sound-System-Modernization-Project-Charter.docx`
+    
+    **Upload to:** `Projects/` folder as `Sound System Upgrade 2024.docx`
+    
+    **Contains:** $2.8M technology investment, ROI analysis, business justification, risk assessments
+
+=== "Venue Setup Operations Manual (JPG)"
+    **🏟️ Visual Operations Guide**
+
+    **Source Files:** `sample-data/google-drive-docs/Operations/`
+    
+    - `Venue-Setup-Operations-Manual-0.jpg` → Upload to: `Operations/` folder
+    - `Venue-Setup-Operations-Manual-1.jpg` → Upload to: `Operations/` folder
+    - `Venue-Setup-Operations-Manual-2.jpg` → Upload to: `Operations/` folder
+    - `Venue-Setup-Operations-Manual-3.jpg` → Upload to: `Operations/` folder
+    
+    **Contains:** Venue setup procedures, safety protocols, process documentation (includes 22 collaborative comments)
+
+=== "Post-Event Analysis (PPTX)"
+    **📊 Performance Analysis Presentation**
+
+    **Source File:** `sample-data/google-drive-docs/Analysis/Post-Event-Analysis-Summer-2024.pptx`
+    
+    **Upload to:** `Analysis/` folder as `Summer 2024 Review.pptx`
+    
+    **Contains:** Operational improvements, process optimization recommendations, lessons learned
+
+### Additional Supporting Documents
+
+!!! info "Cross-Category Documents"
+    These documents enhance the Operations demo but are also used in other categories:
+
+    - **Health & Safety Policy (PDF)** - Upload to `Compliance/` folder
+    - **Audio Service Agreement (PDF)** - Upload to `Vendors/` folder
+
+### Google Drive Upload Structure
+
+```
+Your Google Drive/Festival Operations/
+├── Projects/
+│   └── Sound System Upgrade 2024.docx
+├── Operations/
+│   ├── Venue-Setup-Operations-Manual-0.jpg
+│   ├── Venue-Setup-Operations-Manual-1.jpg
+│   ├── Venue-Setup-Operations-Manual-2.jpg
+│   └── Venue-Setup-Operations-Manual-3.jpg
+├── Analysis/
+│   └── Summer 2024 Review.pptx
+├── Compliance/
+│   └── Health Safety Standards.pdf
+└── Vendors/
+    └── Audio Service Contract.pdf
+```
+
+!!! success "Browser Upload Instructions"
+    1. **Create folder structure** in Google Drive as shown above
+    2. **Drag and drop** files from your local `sample-data/google-drive-docs/` directory
+    3. **Rename files** to match the suggested naming convention
+    4. **Verify OpenFlow connector** can access these folders
+
+!!! tip "Demo Customization"
+    Replace these documents with your organization's operational procedures, technology projects, and vendor agreements to create a relevant operations demo.
+
+---
+
 ## Pre-Demo Setup (30 seconds)
 
 !!! warning "Setup Required"

@@ -18,6 +18,90 @@ Show knowledge management teams how their existing documentation becomes **actio
 
 ---
 
+## Required Documents
+
+!!! note "Document Requirements for Knowledge Management Demo"
+    To run this demo successfully, ensure these documents are uploaded to your Google Drive connector:
+
+### Core Knowledge Documents
+
+=== "Customer Service Training Guide (PPTX)"
+    **👥 Training & Development Program**
+
+    **Source File:** `sample-data/google-drive-docs/Training/Customer-Service-Training-Guide.pptx`
+    
+    **Upload to:** `Training/` folder as `Customer Service Excellence.pptx`
+    
+    **Contains:** Training materials, staff development programs, knowledge transfer procedures, service strategies
+
+=== "All Cross-Functional Documents"
+    **🔄 Complete Organizational Knowledge**
+
+    For comprehensive knowledge management analytics, this demo requires **all documents from other categories**:
+    
+    **From Strategic Planning:**
+    - Strategic Expansion Strategy images (JPG) - Collaboration patterns analysis
+    - Board Meeting Minutes (DOCX) - Executive knowledge sharing
+    - Financial Analysis (PDF) - Cross-functional decision making
+    
+    **From Operations Excellence:**
+    - Venue Setup Manual images (JPG) - **22 collaborative comments** for collaboration analytics
+    - Sound System Project Charter (DOCX) - Knowledge worker expertise identification
+    - Post-Event Analysis (PPTX) - Lessons learned and organizational learning
+    
+    **From Compliance & Risk:**
+    - Health Safety Policy (PDF) - Policy knowledge management
+    - Audio Service Agreement (PDF) - Vendor knowledge and expertise
+
+### Google Drive Upload Structure
+
+```
+Your Google Drive/Festival Operations/
+├── Training/
+│   └── Customer Service Excellence.pptx
+├── Strategic Planning/
+│   ├── 2025-Festival-Expansion-Strategy-0.jpg
+│   ├── 2025-Festival-Expansion-Strategy-1.jpg
+│   ├── 2025-Festival-Expansion-Strategy-2.jpg
+│   ├── 2025-Festival-Expansion-Strategy-3.jpg
+│   └── 2025-Festival-Expansion-Strategy-4.jpg
+├── Operations/
+│   ├── Venue-Setup-Operations-Manual-0.jpg ★ (22 comments)
+│   ├── Venue-Setup-Operations-Manual-1.jpg ★ (22 comments)
+│   ├── Venue-Setup-Operations-Manual-2.jpg ★ (22 comments)
+│   └── Venue-Setup-Operations-Manual-3.jpg ★ (22 comments)
+├── Projects/
+│   └── Sound System Upgrade 2024.docx
+├── Analysis/
+│   └── Summer 2024 Review.pptx
+├── Executive Meetings/
+│   └── Q4 2024 Board Minutes.docx
+├── Financial Reports/
+│   └── Q3 2024 Analysis.pdf
+├── Compliance/
+│   └── Health Safety Standards.pdf
+└── Vendors/
+    └── Audio Service Contract.pdf
+```
+
+!!! success "Browser Upload Instructions"
+    1. **Upload Customer Service Training** as the primary knowledge document
+    2. **Include all documents from other categories** for cross-functional analytics
+    3. **Focus on the Venue Setup Manual** - contains 22 collaborative comments crucial for collaboration analytics
+    4. **Verify OpenFlow connector** can access all folders for comprehensive knowledge analysis
+
+!!! info "Knowledge Analytics Features"
+    This complete document set enables:
+    - **Collaboration Pattern Analysis** - Track knowledge sharing across departments
+    - **Expertise Identification** - Find subject matter experts through document contributions
+    - **Knowledge Evolution** - Understand how organizational knowledge develops over time
+    - **Training Effectiveness** - Measure knowledge transfer and learning outcomes
+
+!!! tip "Demo Customization"
+    This demo works best with the complete document set to demonstrate collaboration patterns, knowledge sharing, and organizational learning across departments. Include training materials, collaborative documents, and cross-functional content from your organization.
+
+---
+
 ## Pre-Demo Setup (30 seconds)
 
 !!! warning "Setup Required"

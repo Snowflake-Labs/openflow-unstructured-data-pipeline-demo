@@ -12,7 +12,7 @@ Before starting, ensure you have:
 - [ ] **Snowflake Enterprise Account** with OpenFlow enabled
 - [ ] **Google Workspace Admin** access  
 - [ ] **Google Cloud Project** with Drive API enabled
-- [ ] **Service Account** with domain-wide delegation configured
+- [ ] **Google Service Account (GSA)** with domain-wide delegation configured
 
 !!! tip "Need Help?"
     If you haven't completed the prerequisites, see the [detailed prerequisites guide](prerequisites.md).
@@ -151,7 +151,7 @@ GRANT ALL ON DATABASE openflow_festival_demo TO festival_demo_service;
 1. **Access OpenFlow UI** in your Snowflake account
 2. **Create Google Drive Connector**:
    - Name: `festival_operations_connector`
-   - Service Account: Upload your JSON key file
+   - Google Service Account (GSA): Upload your JSON key file
    - Shared Drive: Select "Festival Operations"
    - Target: `openflow_festival_demo.festivals_ops`
 
@@ -279,7 +279,7 @@ After setup, you can demonstrate:
     **Solution**: Verify Enterprise account and contact Snowflake support to enable BYOC/SPCS
 
 !!! failure "Google Drive Access Denied"
-    **Solution**: Check service account domain-wide delegation and OAuth scopes
+    **Solution**: Check Google Service Account (GSA) domain-wide delegation and OAuth scopes
 
 !!! failure "Cortex Search Service Creation Failed"  
     **Solution**: Verify Cortex Search is enabled in your account region

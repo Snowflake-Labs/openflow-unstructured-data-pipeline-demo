@@ -50,4 +50,4 @@ This template is designed for:
 Professional template ready for enterprise demos.
 
 ---
-*Snowflake OpenFlow Unstructured Data Pipeline Demo*
+*Unstructured Document Intelligence Demo*

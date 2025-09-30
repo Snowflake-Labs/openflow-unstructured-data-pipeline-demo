@@ -1,4 +1,6 @@
-# Snowflake OpenFlow Unstructured Data Pipeline Demo
+# Unstructured Document Intelligence Demo
+
+*Powered by Snowflake OpenFlow and Cortex*
 
 <div class="grid cards" markdown>
 

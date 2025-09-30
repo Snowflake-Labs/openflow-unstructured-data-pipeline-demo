@@ -18,6 +18,78 @@ Show compliance teams how their existing documentation becomes **actionable comp
 
 ---
 
+## Required Documents
+
+!!! note "Document Requirements for Compliance & Risk Management Demo"
+    To run this demo successfully, ensure these documents are uploaded to your Google Drive connector:
+
+### Core Compliance Documents
+
+=== "Health & Safety Policy (PDF)"
+    **🏥 Policy & Compliance Documentation**
+
+    **Source File:** `sample-data/google-drive-docs/Compliance/Health-Safety-Policy.pdf`
+    
+    **Upload to:** `Compliance/` folder as `Health Safety Standards.pdf`
+    
+    **Contains:** Health and safety policies, regulatory compliance, emergency procedures, OSHA requirements
+
+=== "Audio Equipment Service Agreement (PDF)"
+    **🎵 Vendor Contract & SLA Management**
+
+    **Source File:** `sample-data/google-drive-docs/Vendors/Audio-Equipment-Service-Agreement.pdf`
+    
+    **Upload to:** `Vendors/` folder as `Audio Service Contract.pdf`
+    
+    **Contains:** Vendor contracts, SLAs, compliance obligations, performance metrics, penalty clauses
+
+=== "Post-Event Analysis (PPTX)"
+    **📊 Incident Analysis & Resolution**
+
+    **Source File:** `sample-data/google-drive-docs/Analysis/Post-Event-Analysis-Summer-2024.pptx`
+    
+    **Upload to:** `Analysis/` folder as `Summer 2024 Review.pptx`
+    
+    **Contains:** Incident reports, root cause analysis, resolution procedures, lessons learned
+
+### Additional Supporting Documents
+
+!!! info "Cross-Category Risk Documents"
+    These documents provide additional risk context:
+
+    - **Sound System Project Charter (DOCX)** - Technology risks and mitigation strategies
+    - **Board Meeting Minutes (DOCX)** - Executive risk oversight and decisions
+
+### Google Drive Upload Structure
+
+```
+Your Google Drive/Festival Operations/
+├── Compliance/
+│   └── Health Safety Standards.pdf
+├── Vendors/
+│   └── Audio Service Contract.pdf
+├── Analysis/
+│   └── Summer 2024 Review.pptx
+├── Projects/
+│   └── Sound System Upgrade 2024.docx (optional)
+└── Executive Meetings/
+    └── Q4 2024 Board Minutes.docx (optional)
+```
+
+!!! success "Browser Upload Instructions"
+    1. **Create folder structure** in Google Drive as shown above
+    2. **Drag and drop** files from your local `sample-data/google-drive-docs/` directory
+    3. **Rename files** to match the suggested naming convention
+    4. **Verify OpenFlow connector** can access these folders
+
+!!! warning "Document Dependencies"
+    The **Post-Event Analysis** is shared with the Operations demo. If you're running both demos, upload it once and it will serve both use cases.
+
+!!! tip "Demo Customization"
+    Replace these documents with your organization's compliance policies, incident reports, and vendor agreements to demonstrate relevant risk management scenarios.
+
+---
+
 ## Pre-Demo Setup (30 seconds)
 
 !!! warning "Setup Required"
