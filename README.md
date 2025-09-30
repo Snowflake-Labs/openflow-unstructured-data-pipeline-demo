@@ -1,7 +1,12 @@
-# Snowflake OpenFlow: Unstructured Data Pipeline Demo
+# Unstructured Document Intelligence Demo
 
-Transform your Google Drive business documents into actionable strategic intelligence with Snowflake Intelligence  
-and Cortex Search
+*Powered by Snowflake OpenFlow and Cortex*
+
+Transform your Google Drive business documents into actionable strategic intelligence with the complete OpenFlow → Cortex Search → Snowflake Intelligence pipeline.
+
+## 🚀 **[→ Access Full Documentation Site](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo)**
+
+*Complete setup guides, business-focused demos, and step-by-step tutorials*
 
 > **⚠️ IMPORTANT PREREQUISITE**: This demo requires **Snowflake OpenFlow**, which is currently available only  
 > for **Enterprise accounts** as **BYOC (Bring Your Own Cloud)** or **SPCS (Snowpark Container Services)  
@@ -20,24 +25,27 @@ reducing time-to-insight by 90% and democratizing access to organizational knowl
 
 ---
 
-## 🎯 For Product Marketing Managers
+## 🌟 What This Demo Provides
 
-### Market Positioning & Value Proposition
+### **Complete Documentation Site**
 
-**Primary Use Case**: **Document Intelligence for Business Decision Making**
+📖 **[Professional Documentation](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo)** with:
 
-- Transform Google Drive chaos into organized, searchable business intelligence
-- Enable natural language queries across all document formats
-- Support executive decision-making with instant access to organizational knowledge
+- **Setup Guides** - Prerequisites, database setup, OpenFlow configuration
+- **Business Demos** - 4 category-specific presentations ready for different audiences  
+- **AI Integration** - Snowflake Intelligence agent setup for conversational queries
+- **Reference Materials** - Sample questions, commands, troubleshooting
 
-### Target Customer Scenarios
+### **Business-Ready Demo Categories**
 
-| **Industry** | **Use Case** | **Business Value** |
-|-------------|-------------|-------------------|
-| **Enterprise** | Board minutes, policies, strategic plans | Faster executive decision-making |
-| **Professional Services** | Client documents, proposals, contracts | Improved client engagement & compliance |
-| **Healthcare** | Medical records, policies, research | Enhanced patient care & regulatory compliance |
-| **Financial Services** | Risk assessments, compliance docs, reports | Streamlined regulatory reporting |
+| **Demo Category** | **Target Audience** | **Business Focus** |
+|------------------|-------------------|------------------|
+| **🎯 Strategic Planning** | C-level executives, board members | Investment decisions, market expansion |
+| **🔧 Operations Excellence** | Operations managers, tech leaders | Process optimization, modernization |
+| **⚖️ Compliance & Risk** | Compliance officers, audit teams | Policy enforcement, regulatory adherence |
+| **📚 Knowledge Management** | HR teams, training managers | Staff development, knowledge sharing |
+
+**[→ Browse All Demo Categories](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/demos/)**
 
 ### Competitive Advantages
 
@@ -46,30 +54,85 @@ reducing time-to-insight by 90% and democratizing access to organizational knowl
 - **✅ Enterprise Security**: Snowflake's enterprise-grade security for sensitive documents
 - **✅ Scalable Intelligence**: Handles thousands of documents with sub-second query response
 
-### Demo Talking Points
+## 🚀 Quick Start Options
 
-1. **Document Chaos → Intelligence**: Show messy Google Drive → organized searchable knowledge
-2. **Executive Empowerment**: CEO queries "expansion strategy" gets instant visual results
-3. **Cross-Format Insights**: Single query spans PDFs, presentations, and images
-4. **Time-to-Value**: 15-minute setup vs months of traditional BI implementation
+### **Option 1: Full Documentation Experience (Recommended)**
+
+🌐 **[Browse Complete Site](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo)**
+
+- Visual setup guides with screenshots
+- Business-focused demo presentations  
+- Copy-pasteable sample queries
+- AI integration tutorials
+
+### **Option 2: Technical Quick Start**
+
+For experienced users who want immediate setup:
+
+```bash
+# Run the provided setup script
+snow -f sql/setup.sql
+```
+
+**What the setup script creates:**
+
+- ✅ **Role**: `FESTIVAL_DEMO_ROLE` with appropriate permissions
+- ✅ **Warehouse**: `FESTIVAL_DEMO_S` for compute resources  
+- ✅ **Database**: `OPENFLOW_FESTIVAL_DEMO` for data storage
+- ✅ **Schema**: `FESTIVAL_OPS` for organized data structure
+
+**Alternative - Manual SQL:**
+
+```sql
+-- Or run these commands individually in your Snowflake worksheet
+CREATE ROLE IF NOT EXISTS FESTIVAL_DEMO_ROLE;
+CREATE WAREHOUSE IF NOT EXISTS FESTIVAL_DEMO_S;
+CREATE DATABASE IF NOT EXISTS OPENFLOW_FESTIVAL_DEMO;
+CREATE SCHEMA IF NOT EXISTS OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS;
+```
+
+**Next Steps:**
+
+1. 📋 **[Prerequisites](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/prerequisites/)** - Technical requirements
+2. ⚡ **[Quick Setup](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/quick-setup/)** - 15-minute streamlined setup
+3. 🔧 **[OpenFlow Setup](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/setup-openflow/)** - Connector configuration
+4. 🎯 **[Demo Categories](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/demos/)** - Business presentations
 
 ---
 
-## 💼 For Interested Executives
+## 💡 Sample Capabilities
 
-### Strategic Business Impact
+Once your pipeline is set up, you can ask questions like:
 
-**Investment**: 15-30 minute technical setup + existing Snowflake infrastructure
-**Return**: Instant access to organizational intelligence across all business documents
+```
+🎯 Strategic: "What are our 2025 expansion strategies and expected ROI?"
+🔧 Operations: "Find all technology modernization projects and their budgets"  
+⚖️ Compliance: "Show me current health and safety policies"
+📚 Knowledge: "What training materials are available for staff development?"
+```
 
-### Key Business Outcomes
+**[→ Browse 50+ Sample Questions](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/reference/sample-questions/)**
 
-| **Outcome** | **Impact** | **Timeline** |
-|------------|-----------|-------------|
-| **Faster Decision Making** | 90% reduction in document search time | Immediate |
-| **Knowledge Democratization** | Non-technical staff access business intelligence | Week 1 |
-| **Risk Mitigation** | Compliance documents instantly searchable | Immediate |
-| **Strategic Alignment** | Cross-department document insights | Month 1 |
+## 🏗️ What Gets Built
+
+**End-to-End Architecture:**
+
+```mermaid
+graph LR
+    A[📁 Google Drive] --> B[🔄 OpenFlow Pipeline]
+    B --> C[🔍 Cortex Search Service]  
+    C --> D[🤖 Snowflake Intelligence]
+    D --> E[💬 Natural Language Queries]
+    E --> F[📊 Business Insights]
+```
+
+**Core Components:**
+
+- ✅ **Multi-format document processing** (PDF, DOCX, PPTX, JPG)
+- ✅ **Automated Cortex Search service** creation and indexing
+- ✅ **Business-focused demo categories** for different stakeholders  
+- ✅ **Optional AI agent** for conversational document queries
+- ✅ **Production-ready setup** with security and authentication
 
 ### Executive Use Cases Demonstrated
 
@@ -213,15 +276,25 @@ data pipeline and indexed by Cortex Search for intelligent document retrieval.*
 
 ---
 
-## 🚀 Getting Started
+## 📚 Documentation & Resources
 
-### For Demo Execution
+### **Complete Documentation Site**
 
-1. **Review** [Demo Execution Guide](./analytics/demo_execution_guide.md) for complete setup
-2. **Setup** Google Drive folder structure per documentation
-3. **Upload** provided business documents to appropriate folders
-4. **Configure** OpenFlow Google Drive connector
-5. **Execute** multi-format document intelligence demonstration
+🌐 **[Snowflake-labs.GitHub.io/OpenFlow-unstructured-data-pipeline-demo](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo)**
+
+The documentation site provides:
+
+- 🔧 **Technical Setup** - Prerequisites, database setup, connector configuration
+- 🎯 **Business Demos** - Ready-to-present category demonstrations  
+- 🤖 **AI Integration** - Snowflake Intelligence agent setup
+- 📋 **Reference Guides** - Commands, sample questions, troubleshooting
+
+### **Key Documentation Sections**
+
+- **[Getting Started](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/)** - Complete setup workflow
+- **[Demo Categories](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/demos/)** - Business-focused presentations
+- **[AI Integration](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/setup/snowflake-intelligence/)** - Snowflake Intelligence setup
+- **[Reference](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/reference/)** - Sample questions and commands
 
 ### For Business Analysis
 
@@ -271,11 +344,25 @@ data pipeline and indexed by Cortex Search for intelligent document retrieval.*
 
 ---
 
+## 🎯 **Get Started Today**
+
+### **[→ Access Complete Documentation](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo)**
+
 **Ready to transform your unstructured business documents into strategic intelligence?**
 
-Contact your Snowflake team for a customized demonstration using your organization's actual business documents.
+1. 📖 **[Start with Prerequisites](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/prerequisites/)**
+2. ⚡ **[Follow Quick Setup](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/quick-setup/)**
+3. 🎯 **[Run Your First Demo](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/demos/)**
+4. 🤖 **[Add AI Integration](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/setup/snowflake-intelligence/)**
 
 ---
 
-*This demonstration showcases Snowflake's unstructured data processing capabilities using realistic festival  
-operations business documents. All data is synthetic and designed for educational and demonstration purposes.*
+## 📞 Support & Resources
+
+- 📖 **[Snowflake OpenFlow Docs](https://docs.snowflake.com/en/user-guide/data-load/openflow)**
+- 🔍 **[Cortex Search Docs](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-search)**  
+- 🤖 **[Snowflake Intelligence Docs](https://docs.snowflake.com/en/user-guide/snowflake-cortex/snowflake-intelligence)**
+
+---
+
+⚠️ **Note**: This demo uses synthetic festival operations data for demonstration purposes. All business scenarios, names, and data are fictional and created specifically for showcasing Snowflake capabilities.
