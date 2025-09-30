@@ -3,7 +3,7 @@ name: Site
 on:
   push:
     branches:
-      - "mkdocs"
+      - "main"
 env:
   SITE_DIR: "site"
 permissions:

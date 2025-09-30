@@ -34,7 +34,7 @@ Ready to set up your Snowflake OpenFlow document intelligence demo? This guide w
 
     **Visual guide** with screenshots for OpenFlow Google Drive connector configuration
 
-    [:octicons-arrow-right-24: Connector Setup Guide](setup-workflow.md)
+    [:octicons-arrow-right-24: Connector Setup Guide](setup-openflow.md)
 
 </div>
 

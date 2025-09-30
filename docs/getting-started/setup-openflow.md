@@ -29,19 +29,21 @@ Following the [official Snowflake OpenFlow SPCS setup guide](https://docs.snowfl
 !!! important "Demo Configuration Values"
     **Screenshots in Steps 2-4 show example values**. Replace them with your **Festival Demo settings**:
 
-    - **Database**: `openflow_festival_demo`
+    - **Database**: `OPENFLOW_FESTIVAL_DEMO`
     - **Schema**: `festivals_ops`  
     - **Service User**: `festival_demo_service`
     - **Google Drive Shared Drive**: `Festival Operations`
     - **Cortex Search Service**: `FESTIVALS_OPS_SEARCH_SERVICE` (auto-created)
 
-## Step 1: Access OpenFlow Connectors
+## Step 1: Add OpenFlow Connector to Runtime
 
 Navigate to **OpenFlow** in your Snowflake account and access the connectors list:
 
 ![OpenFlow Connectors List](../assets/images/openflow_unstruct_connectors_list.png)
 
-**Available Connectors**: Choose "Google Drive" for unstructured document processing
+**Available Connectors**: Choose "Google Drive" for unstructured document processing and click "Add"
+
+![Add OpenFlow Connector to Runtime](../assets/images/openflow_add_connector_to_runtime.gif)
 
 ## Step 2: Configure Google Drive Source
 
@@ -49,11 +51,23 @@ Set up the Google Drive source parameters for your Festival Operations shared dr
 
 ![Google Drive Source Parameters](../assets/images/openflow_connector_gdrive_source_parameters.png)
 
-**Key Configuration:**
+**Key Configuration Parameters:**
 
-- **Shared Drive**: Select "Festival Operations"
-- **Google Service Account (GSA)**: Upload your JSON key file
-- **Folder Structure**: Include all document categories
+- **GCP Service Account JSON**: Upload your Google Service Account JSON key file
+- **Google Delegation User**: `hi@kameshs.dev` (your Google Workspace user with drive access)
+
+!!! tip "Google Service Account (GSA) Setup"
+    - Create and download your GSA JSON key file from Google Cloud Console
+    - Enable domain-wide delegation for the service account
+    - Ensure appropriate permissions to access your target Google Drive folder
+
+!!! warning "Credential Management"
+    **For sensitive values like GSA JSON**: Consider using credential management tools like:
+
+    - **HashiCorp Vault** for enterprise environments
+    - **AWS Secrets Manager** if using AWS infrastructure  
+    - **Azure Key Vault** for Azure-based deployments
+    - **Google Secret Manager** for Google Cloud environments
 
 ## Step 3: Set Destination Parameters
 
@@ -61,15 +75,23 @@ Configure the Snowflake destination for processed documents:
 
 ![Google Drive Destination Parameters](../assets/images/openflow_connector_gdrive_destination_parameters.png)
 
-**Destination Configuration:**
+**Destination Configuration Parameters:**
 
-- **Database**: `openflow_festival_demo`
-- **Schema**: `festivals_ops`
-- **Service User**: `festival_demo_service`
-- **Cortex Search**: Auto-create `FESTIVALS_OPS_SEARCH_SERVICE`
+- **Destination Database**: `OPENFLOW_FESTIVAL_DEMO`
+- **Destination Schema**: `FESTIVAL_OPS`
+- **Snowflake Role**: `FESTIVAL_DEMO_ROLE`
+- **Snowflake Warehouse**: `FESTIVAL_DEMO_S`
+- **Snowflake Authentication Strategy**: `SNOWFLAKE_SESSION_TOKEN`
 
 !!! info "SPCS Authentication"
-    With **OpenFlow SPCS deployment**, authentication uses `SNOWFLAKE_SESSION_TOKEN` automatically. No passwords or additional account credentials required - the connector inherits your current Snowflake session.
+    With **OpenFlow SPCS deployment**, authentication uses `SNOWFLAKE_SESSION_TOKEN` automatically. The connector inherits your current Snowflake session - no passwords or additional account credentials required.
+
+!!! warning "Credential Security"
+    **For production environments**: Use credential management solutions to securely store and rotate your GSA JSON keys:
+
+    - **Enterprise**: HashiCorp Vault, CyberArk, AWS Secrets Manager
+    - **Cloud-native**: Google Secret Manager, Azure Key Vault
+    - **Best practices**: Regular key rotation, least-privilege access
 
 ## Step 4: Configure Ingestion Parameters
 
@@ -77,12 +99,39 @@ Define how documents will be processed and ingested (inherits destination settin
 
 ![Google Drive Ingestion Parameters](../assets/images/openflow_connector_gdrive_ingestion_parameters.png)
 
-**Processing Settings:**
+**Ingestion Configuration Parameters:**
 
-- **Multi-format Support**: PDF, DOCX, PPTX, JPG
-- **Content Extraction**: Full document text and metadata
-- **Cortex Search Integration**: Automatic service creation
-- **Destination Inheritance**: Uses database/schema from Step 3
+**Database & Schema:**
+
+- **Destination Database**: `OPENFLOW_FESTIVAL_DEMO`
+- **Destination Schema**: `FESTIVAL_OPS`
+- **Snowflake File Hash Table Name**: `FILE_HASHES`
+
+**Google Drive Settings:**
+
+- **Google Folder Name**: `Festival Operations`
+- **Google Domain**: `kameshs.dev`
+- **Google Drive ID**: `[Your shared drive ID]`
+- **Google Delegation User**: `hi@kameshs.dev`
+
+**File Processing:**
+
+- **File Extensions To Ingest**: `pdf,txt,docx,xlsx,pptx,html,jpg`
+- **OCR Mode**: `LAYOUT` (preserves document structure during text extraction)
+
+**Snowflake Connection:**
+
+- **Snowflake Role**: `FESTIVAL_DEMO_ROLE`
+- **Snowflake Warehouse**: `FESTIVAL_DEMO_S`
+- **Snowflake Cortex Search Service Role**: `FESTIVAL_DEMO_ROLE`
+- **Snowflake Authentication Strategy**: `SNOWFLAKE_SESSION_TOKEN`
+
+**Authentication:**
+
+- **GCP Service Account JSON**: Your GSA JSON key file (securely stored)
+
+!!! info "Session-Based Authentication"
+    With `SNOWFLAKE_SESSION_TOKEN` authentication, the connector automatically inherits your current Snowflake session credentials. No additional username, password, or private key configuration required.
 
 ## Step 5: Start the Connector
 
@@ -98,7 +147,7 @@ Once all parameters are configured, deploy and start the connector:
 4. **Monitor Progress**: Watch as documents are ingested and processed
 
 !!! success "Automatic Cortex Search Creation"
-    The connector will automatically create the `FESTIVALS_OPS_SEARCH_SERVICE` after processing the first document. No additional configuration required!
+    The connector will automatically create the `FESTIVAL_OPS_SEARCH_SERVICE` after processing the first document. No additional configuration required!
 
 ## Expected Results
 
@@ -107,10 +156,10 @@ After connector setup and initial processing:
 ✅ **Snowflake Objects Created**
 
 ```
-Database: openflow_festival_demo
-Schema: festivals_ops  
+Database: OPENFLOW_FESTIVAL_DEMO
+Schema: FESTIVAL_OPS  
 Tables: [Auto-created by OpenFlow based on document structure]
-Cortex Search Service: FESTIVALS_OPS_SEARCH_SERVICE
+Cortex Search Service: FESTIVAL_OPS_SEARCH_SERVICE
 ```
 
 ✅ **Document Processing Status**
@@ -146,5 +195,13 @@ Cortex Search Service: FESTIVALS_OPS_SEARCH_SERVICE
     Access ready-to-use sample questions for business presentations
 
     [:octicons-arrow-right-24: Sample Questions](../reference/sample-questions.md){target="_blank"}
+
+- :material-robot:{ .lg .middle } **Snowflake Intelligence**
+
+    ---
+
+    Create an AI agent for conversational document queries
+
+    [:octicons-arrow-right-24: Setup AI Agent](../setup/snowflake-intelligence.md)
 
 </div>

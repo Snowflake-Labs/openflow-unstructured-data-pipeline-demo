@@ -167,13 +167,15 @@ nav:
       - Overview: getting-started/index.md
       - Prerequisites: getting-started/prerequisites.md
       - Quick Setup: getting-started/quick-setup.md
-      - Setup OpenFlow Connector: getting-started/setup-workflow.md
+      - Setup OpenFlow Connector: getting-started/setup-openflow.md
   - Category Demos:
       - Demo Hub: demos/index.md
       - Strategic Planning: demos/strategic.md
       - Operations Excellence: demos/operations.md
       - Compliance & Risk: demos/compliance.md
       - Knowledge Management: demos/knowledge.md
+  - AI Integration:
+      - Snowflake Intelligence: setup/snowflake-intelligence.md
   - Reference:
       - Overview: reference/index.md
       - Commands: reference/commands.md

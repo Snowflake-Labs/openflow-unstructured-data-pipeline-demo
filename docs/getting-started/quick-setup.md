@@ -133,8 +133,8 @@ Check your Google Drive "Festival Operations" shared drive contains:
 
 ```sql
 -- Create target database and schema
-CREATE DATABASE IF NOT EXISTS openflow_festival_demo;
-CREATE SCHEMA IF NOT EXISTS openflow_festival_demo.festivals_ops;
+CREATE DATABASE IF NOT EXISTS OPENFLOW_FESTIVAL_DEMO;
+CREATE SCHEMA IF NOT EXISTS OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS;
 
 -- Create service user for OpenFlow
 CREATE USER IF NOT EXISTS festival_demo_service
@@ -142,8 +142,8 @@ TYPE = SERVICE
 MUST_CHANGE_PASSWORD = FALSE;
 
 -- Grant necessary privileges
-GRANT USAGE ON WAREHOUSE compute_wh TO festival_demo_service;
-GRANT ALL ON DATABASE openflow_festival_demo TO festival_demo_service;
+GRANT USAGE ON WAREHOUSE FESTIVAL_DEMO_S TO ROLE FESTIVAL_DEMO_ROLE;
+GRANT ALL ON DATABASE OPENFLOW_FESTIVAL_DEMO TO ROLE FESTIVAL_DEMO_ROLE;
 ```
 
 ### OpenFlow Connector Configuration
@@ -153,7 +153,7 @@ GRANT ALL ON DATABASE openflow_festival_demo TO festival_demo_service;
    - Name: `festival_operations_connector`
    - Google Service Account (GSA): Upload your JSON key file
    - Shared Drive: Select "Festival Operations"
-   - Target: `openflow_festival_demo.festivals_ops`
+   - Target: `OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS`
 
 3. **Start Connector**: Begin document processing
 
