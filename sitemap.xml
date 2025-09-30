@@ -37,7 +37,7 @@
          <lastmod>2025-09-30</lastmod>
     </url>
     <url>
-         <loc>https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/setup-workflow/</loc>
+         <loc>https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/setup-openflow/</loc>
          <lastmod>2025-09-30</lastmod>
     </url>
     <url>
@@ -58,6 +58,10 @@
     </url>
     <url>
          <loc>https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/reference/taskfile/</loc>
+         <lastmod>2025-09-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/setup/snowflake-intelligence/</loc>
          <lastmod>2025-09-30</lastmod>
     </url>
 </urlset>
