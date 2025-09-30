@@ -539,3 +539,16 @@ tasks:
         echo "   • 'Which documents have the most collaboration and strategic importance?'"
         echo "   • 'What operational risks and mitigation strategies are documented?'"
     silent: true
+  build-site:
+    desc: "Build the site"
+    cmds:
+      - |
+        uv run mkdocs build
+    silent: true
+
+  run-site-local:
+    desc: "Run the site locally"
+    cmds:
+      - |
+        uv run mkdocs serve
+    silent: true

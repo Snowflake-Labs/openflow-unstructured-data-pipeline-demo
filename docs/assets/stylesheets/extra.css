@@ -1,0 +1,99 @@
+/* Custom MkDocs Material styling for OpenFlow Demo */
+
+/* Hero section styling */
+.md-typeset .grid.cards {
+  grid-gap: 1rem;
+  margin: 1rem 0;
+}
+
+.md-typeset .grid.cards>* {
+  border-radius: 0.4rem;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.md-typeset .grid.cards>*:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+/* Admonition styling */
+.md-typeset .admonition.success {
+  border-left: 4px solid #4caf50;
+}
+
+.md-typeset .admonition.example {
+  border-left: 4px solid #9c27b0;
+}
+
+/* Tab styling for document categories */
+.md-typeset .tabbed-labels {
+  margin-bottom: 1rem;
+}
+
+/* Code block improvements */
+.md-typeset .highlight pre {
+  border-radius: 0.4rem;
+}
+
+/* Mermaid diagram styling */
+.mermaid {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Image styling */
+.md-typeset img[loading="lazy"] {
+  border-radius: 0.4rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+/* Navigation improvements */
+.md-nav--primary .md-nav__title {
+  font-weight: 600;
+}
+
+/* Business value table styling */
+.md-typeset table th {
+  background-color: rgba(33, 150, 243, 0.1);
+  font-weight: 600;
+}
+
+/* Custom colors for categories */
+.strategic {
+  color: #1976d2;
+}
+
+.operations {
+  color: #ff6b35;
+}
+
+.compliance {
+  color: #4caf50;
+}
+
+.knowledge {
+  color: #9c27b0;
+}
+
+/* Demo workflow styling */
+.demo-workflow {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+
+.demo-workflow h3 {
+  color: white;
+  margin-top: 0;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .md-typeset .grid.cards {
+    grid-template-columns: 1fr;
+  }
+}

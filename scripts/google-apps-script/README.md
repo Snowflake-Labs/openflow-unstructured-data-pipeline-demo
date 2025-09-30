@@ -1,6 +1,6 @@
 # Google Apps Script: Enterprise Shared Drive Automation
 
-Automated Google Workspace Shared Drive folder creation for the Snowflake OpenFlow Unstructured Data Pipeline Demo.
+Automated Google Workspace Shared Drive folder creation for the Unstructured Document Intelligence Demo.
 
 **Enterprise Only**: Designed specifically for Google Workspace users with Shared Drive access.
 

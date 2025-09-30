@@ -1,6 +1,6 @@
 # Scripts Directory
 
-Automation scripts and utilities for the Snowflake OpenFlow Unstructured Data Pipeline Demo.
+Automation scripts and utilities for the Unstructured Document Intelligence Demo.
 
 ## 📁 Directory Structure
 

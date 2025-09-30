@@ -1,0 +1,192 @@
+site_name: Unstructured Document Intelligence Demo
+site_description: |
+  Complete demo showcasing Snowflake OpenFlow and Cortex:
+    Google Drive → OpenFlow → Cortex Search using festival operations business documents
+site_author: Snowflake Developers
+site_url: https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo
+
+repo_name: Snowflake-Labs/openflow-unstructured-data-pipeline-demo
+repo_url: https://github.com/Snowflake-Labs/openflow-unstructured-data-pipeline-demo
+
+copyright: Copyright &copy; 2025 Snowflake
+
+theme:
+  name: material
+  language: en
+  logo: assets/images/snowflake-logo-blue.svg
+  favicon: assets/images/favicon.ico
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: white
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+    tag:
+      default: fontawesome/solid/tag
+      demo: fontawesome/solid/play
+      setup: fontawesome/solid/cog
+      analysis: fontawesome/solid/chart-bar
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      title: On this page
+      toc_depth: 3
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - custom-skip-lightbox-class
+      auto_caption: false
+      caption_position: bottom
+  - macros:
+      module_name: docs/macros
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+  - git-committers:
+      repository: Snowflake-Labs/openflow-unstructured-data-pipeline-demo
+      branch: main
+  - redirects:
+      redirect_maps: {}
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Snowflake-Labs
+    - icon: material/web
+      link: https://snowflake.com
+    - icon: fontawesome/brands/twitter
+      link: https://x.com/Snowflake
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/snowflake-computing
+
+  tags:
+    Demo: demo
+    Setup: setup
+    Analysis: analysis
+    OpenFlow: openflow
+    Cortex Search: cortex-search
+    Business Intelligence: business-intelligence
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Overview: getting-started/index.md
+      - Prerequisites: getting-started/prerequisites.md
+      - Quick Setup: getting-started/quick-setup.md
+      - Setup OpenFlow Connector: getting-started/setup-openflow.md
+  - Category Demos:
+      - Demo Hub: demos/index.md
+      - Strategic Planning: demos/strategic.md
+      - Operations Excellence: demos/operations.md
+      - Compliance & Risk: demos/compliance.md
+      - Knowledge Management: demos/knowledge.md
+  - AI Integration:
+      - Snowflake Intelligence: setup/snowflake-intelligence.md
+  - Reference:
+      - Overview: reference/index.md
+      - Commands: reference/commands.md
+      - Sample Questions: reference/sample-questions.md
+      - Taskfile Guide: reference/taskfile.md
+      - Snowflake Documentation: reference/snowflake-links.md
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

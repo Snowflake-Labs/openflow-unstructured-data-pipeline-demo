@@ -1,0 +1,40 @@
+name: Site
+
+on:
+  push:
+    branches:
+      - "main"
+env:
+  SITE_DIR: "site"
+permissions:
+  contents: write
+jobs:
+  buildAnDeploySite:
+    name: "Build site with mkdocs"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.12]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+      - name: Install dependencies
+        run: |
+          uv sync
+      - name: Build Site
+        run: |
+          uv run mkdocs build
+      - name: Deploy Site
+        id: deploy_site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.REPO_GH_ACTION_TOKEN }}
+          publish_dir: "${{ env.SITE_DIR }}"
+          publish_branch: "gh-pages"
+          full_commit_message: "[Release]${{ github.event.head_commit.message }}"
