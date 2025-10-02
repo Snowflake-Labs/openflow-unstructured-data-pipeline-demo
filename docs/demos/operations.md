@@ -1,3 +1,20 @@
+<!--
+Copyright 2025 Snowflake Inc.
+SPDX-License-Identifier: Apache-2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # Operations Excellence Demo
 
 **Target Audience:** Operations managers, process improvement teams, technology leaders  
@@ -86,7 +103,7 @@ Your Google Drive/Festival Operations/
     1. **Create folder structure** in Google Drive as shown above
     2. **Drag and drop** files from your local `sample-data/google-drive-docs/` directory
     3. **Rename files** to match the suggested naming convention
-    4. **Verify OpenFlow connector** can access these folders
+    4. **Verify Openflow connector** can access these folders
 
 !!! tip "Demo Customization"
     Replace these documents with your organization's operational procedures, technology projects, and vendor agreements to create a relevant operations demo.

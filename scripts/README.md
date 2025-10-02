@@ -1,3 +1,20 @@
+<!--
+Copyright 2025 Snowflake Inc.
+SPDX-License-Identifier: Apache-2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # Scripts Directory
 
 Automation scripts and utilities for the Unstructured Document Intelligence Demo.
@@ -33,7 +50,7 @@ This directory is designed to accommodate additional automation scripts:
 
 - **Python Scripts**: Document processing utilities
 - **Shell Scripts**: Environment setup automation  
-- **API Scripts**: Snowflake and OpenFlow integration helpers
+- **API Scripts**: Snowflake and Openflow integration helpers
 - **Testing Scripts**: Demo validation and verification tools
 
 ### **Integration Points**
@@ -77,7 +94,7 @@ This directory is designed to accommodate additional automation scripts:
 ### **Integration Scripts** (Future)
 
 - **Snowflake Connection**: Database setup and configuration
-- **OpenFlow Management**: Connector configuration and monitoring
+- **Openflow Management**: Connector configuration and monitoring
 - **Cortex Search**: Service setup and query optimization
 
 ### **Utility Scripts** (Future)
@@ -122,5 +139,5 @@ This directory is designed to accommodate additional automation scripts:
 
 ---
 
-**This scripts directory provides the foundation for comprehensive Snowflake OpenFlow demo automation,  
+**This scripts directory provides the foundation for comprehensive Snowflake Openflow demo automation,  
 with room for future expansion and improved developer experience.**

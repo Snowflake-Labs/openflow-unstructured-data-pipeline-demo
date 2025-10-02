@@ -1,3 +1,20 @@
+<!--
+Copyright 2025 Snowflake Inc.
+SPDX-License-Identifier: Apache-2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # Google Apps Script: Enterprise Shared Drive Automation
 
 Automated Google Workspace Shared Drive folder creation for the Unstructured Document Intelligence Demo.
@@ -15,7 +32,7 @@ Automated Google Workspace Shared Drive folder creation for the Unstructured Doc
    - Find "Google Drive API" and click "Add"
    - This enables advanced Drive API features for metadata and enhanced operations
 4. **Replace Code**: Delete default `Code.gs` content and paste the entire `CreateFolderStructure.gs` script
-5. **Save Project**: Click Save (💾) and name it "Snowflake OpenFlow Demo Setup"
+5. **Save Project**: Click Save (💾) and name it "Snowflake Openflow Demo Setup"
 
 ### Step 2: Get Your Shared Drive ID
 
@@ -72,7 +89,7 @@ After successful execution, you'll see:
 - 💾 **Location**: Either "SHARED DRIVE" or "MY DRIVE"
 - 📁 **Complete folder structure**: 9 main business folders (matches sample data exactly)
 - 🔗 **Folder URL**: Direct link to your demo folder
-- 📋 **Folder ID**: For OpenFlow connector configuration
+- 📋 **Folder ID**: For Openflow connector configuration
 
 ---
 
@@ -137,7 +154,7 @@ The script now provides enterprise-grade capabilities:
 - **📋 Metadata Tagging**: Automatic categorization of folders
 - **🏢 Enterprise Properties**: Custom properties for tracking and integration
 - **⚡ Enhanced Verification**: Drive API validates Shared Drive access
-- **🎯 OpenFlow Ready**: Folders marked as ready for document intelligence processing
+- **🎯 Openflow Ready**: Folders marked as ready for document intelligence processing
 
 ### **With Taskfile Automation**
 
@@ -159,12 +176,12 @@ task copy-all-categories
    - Compliance docs → Compliance/
    - Training materials → Training/
 
-### **OpenFlow Configuration**
+### **Openflow Configuration**
 
 After running the script:
 
 1. **Copy the Folder ID** from the execution log
-2. **Configure OpenFlow Google Drive connector**
+2. **Configure Openflow Google Drive connector**
 3. **Point to Festival Operations folder**
 4. **Process documents into Snowflake**
 
@@ -323,7 +340,7 @@ For existing document collections:
 
 1. **Create folder structure** with the script
 2. **Move existing files** into appropriate category folders
-3. **Maintain organization** for OpenFlow processing
+3. **Maintain organization** for Openflow processing
 
 ### **Multi-Environment Setup**
 
@@ -331,7 +348,7 @@ For multiple demo environments:
 
 1. **Modify folder name** in the script (e.g., "Festival Operations - Demo A")
 2. **Run script multiple times** with different names
-3. **Configure separate OpenFlow connectors** for each environment
+3. **Configure separate Openflow connectors** for each environment
 
 ---
 
@@ -349,9 +366,9 @@ For multiple demo environments:
 - ✅ **Permission inheritance**: Automatic team access via Shared Drive
 - ✅ **Centralized management**: IT-friendly organizational structure
 - ✅ **Enhanced metadata**: Drive API adds custom properties for tracking
-- ✅ **Enterprise tagging**: Automatic categorization and OpenFlow readiness markers
+- ✅ **Enterprise tagging**: Automatic categorization and Openflow readiness markers
 
-### **Snowflake OpenFlow Ready**
+### **Snowflake Openflow Ready**
 
 - ✅ **Optimized structure**: Purpose-built for document intelligence
 - ✅ **Category organization**: 4 strategic business intelligence areas
@@ -359,6 +376,6 @@ For multiple demo environments:
 
 ---
 
-**Ready to streamline your enterprise Snowflake OpenFlow demo setup? Run the enhanced Google Apps Script with  
+**Ready to streamline your enterprise Snowflake Openflow demo setup? Run the enhanced Google Apps Script with  
 Drive API integration and have your enterprise-grade folder structure with metadata tagging created in Google  
 Workspace Shared Drives within minutes!**

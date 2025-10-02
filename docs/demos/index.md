@@ -1,3 +1,20 @@
+<!--
+Copyright 2025 Snowflake Inc.
+SPDX-License-Identifier: Apache-2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # Category Demos
 
 Focused demonstration guides tailored for specific business audiences and use cases.
@@ -6,7 +23,7 @@ Focused demonstration guides tailored for specific business audiences and use ca
     **All documents and data used in these demos are completely fictional and synthetic.**
     The festival operations business scenario, employee names, financial figures, vendor relationships,
     and business processes are created solely for demonstration purposes. This synthetic data showcases
-    OpenFlow and Cortex Search capabilities across realistic business use cases.
+    Openflow and Cortex Search capabilities across realistic business use cases.
 
     **For production use**: Replace all demo documents with your organization's actual business content 
     using the customization workflow provided.
@@ -179,7 +196,7 @@ task convert-to-jpg     # Generate JPG images
 3. **Upload** the converted files (not the .md sources) to Google Drive
 
 !!! tip "Multi-Format Demo Capability"
-    This conversion approach demonstrates OpenFlow's ability to process diverse document formats
+    This conversion approach demonstrates Openflow's ability to process diverse document formats
     (JPG, PDF, DOCX, PPTX) from a single markdown source, showcasing real-world enterprise document variety.
 
 ---

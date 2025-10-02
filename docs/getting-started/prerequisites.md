@@ -1,9 +1,26 @@
+<!--
+Copyright 2025 Snowflake Inc.
+SPDX-License-Identifier: Apache-2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # Prerequisites
 
 Before setting up the Unstructured Document Intelligence Demo, ensure you have the following requirements in place.
 
 !!! warning "Enterprise Requirement"
-    This demo requires **Snowflake OpenFlow**, which is currently available only for **Enterprise accounts** as **BYOC (Bring Your Own Cloud)** or **SPCS (Snowpark Container Services) Public Preview**.
+    This demo requires **Snowflake Openflow**, which is currently available only for **Enterprise accounts** as **BYOC (Bring Your Own Cloud)** or **SPCS (Snowpark Container Services) Public Preview**.
 
     Contact your Snowflake account team to enable OpenFlow access.
 
@@ -127,7 +144,7 @@ snow --version
 ### Account & Access
 
 - [ ] **Snowflake Account**: Active Enterprise account in AWS Commercial Regions
-- [ ] **OpenFlow Access**: BYOC or SPCS Public Preview enabled
+- [ ] **Openflow Access**: BYOC or SPCS Public Preview enabled
 - [ ] **Account Admin Access**: Ability to create services and manage users
 
 ### Account Requirements
@@ -235,7 +252,7 @@ You can verify Snowflake access in two ways:
     -- This confirms Cortex Search is available in your account
     ```
 
-### OpenFlow Access
+### Openflow Access
 
 Contact your Snowflake account team to verify:
 
@@ -263,8 +280,8 @@ Contact your Snowflake account team to verify:
 
 ### Snowflake Access Issues
 
-!!! failure "OpenFlow Not Available"
-    **Error**: OpenFlow connectors not visible
+!!! failure "Openflow Not Available"
+    **Error**: Openflow connectors not visible
 
     **Solution**: Contact Snowflake support to enable BYOC/SPCS access
 
@@ -285,7 +302,7 @@ Once you've completed all prerequisites:
 
     ---
 
-    **Complete 15-minute setup guide** - includes Google Drive, OpenFlow, and Cortex Search configuration
+    **Complete 15-minute setup guide** - includes Google Drive, Openflow, and Cortex Search configuration
 
     [:octicons-arrow-right-24: Quick Setup Guide](quick-setup.md)
 

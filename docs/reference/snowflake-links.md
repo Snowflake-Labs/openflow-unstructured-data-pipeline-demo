@@ -1,15 +1,32 @@
+<!--
+Copyright 2025 Snowflake Inc.
+SPDX-License-Identifier: Apache-2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # Snowflake Documentation Links
 
-Official Snowflake documentation and resources for OpenFlow, Cortex Search, and related technologies.
+Official Snowflake documentation and resources for Openflow, Cortex Search, and related technologies.
 
 ## Core Platform Documentation
 
-### Snowflake OpenFlow
+### Snowflake Openflow
 
-- **[OpenFlow Overview](https://docs.snowflake.com/en/user-guide/data-pipelines/openflow/overview)** - Introduction to Snowflake OpenFlow
-- **[OpenFlow Connectors](https://docs.snowflake.com/en/user-guide/data-pipelines/openflow/connectors)** - Available data connectors
+- **[Openflow Overview](https://docs.snowflake.com/en/user-guide/data-pipelines/openflow/overview)** - Introduction to Snowflake Openflow
+- **[Openflow Connectors](https://docs.snowflake.com/en/user-guide/data-pipelines/openflow/connectors)** - Available data connectors
 - **[Google Drive Connector](https://docs.snowflake.com/en/user-guide/data-pipelines/openflow/connectors/google-drive)** - Google Drive integration guide
-- **[OpenFlow Best Practices](https://docs.snowflake.com/en/user-guide/data-pipelines/openflow/best-practices)** - Implementation recommendations
+- **[Openflow Best Practices](https://docs.snowflake.com/en/user-guide/data-pipelines/openflow/best-practices)** - Implementation recommendations
 
 ### Snowflake Cortex Search
 
@@ -86,7 +103,7 @@ Official Snowflake documentation and resources for OpenFlow, Cortex Search, and 
 
 - **[Snowflake Quickstart](https://quickstarts.snowflake.com/)** - Hands-on tutorials and labs
 - **[Learning Path: AI/ML](https://learn.snowflake.com/ai-ml)** - Structured AI/ML curriculum
-- **[OpenFlow Tutorial](https://quickstarts.snowflake.com/guide/openflow_getting_started/)** - Step-by-step OpenFlow guide
+- **[Openflow Tutorial](https://quickstarts.snowflake.com/guide/openflow_getting_started/)** - Step-by-step Openflow guide
 
 ### Best Practices
 
@@ -114,7 +131,7 @@ Official Snowflake documentation and resources for OpenFlow, Cortex Search, and 
 
 - **[Release Notes](https://docs.snowflake.com/en/release-notes)** - Latest feature releases and updates
 - **[Cortex Search Release Notes](https://docs.snowflake.com/en/release-notes/cortex-search)** - Search-specific updates
-- **[OpenFlow Release Notes](https://docs.snowflake.com/en/release-notes/openflow)** - Pipeline platform updates
+- **[Openflow Release Notes](https://docs.snowflake.com/en/release-notes/openflow)** - Pipeline platform updates
 
 ### Preview Features
 

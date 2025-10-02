@@ -1,14 +1,31 @@
+<!--
+Copyright 2025 Snowflake Inc.
+SPDX-License-Identifier: Apache-2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # Snowflake Intelligence Setup
 
-*Integrating AI-powered chat interface with your OpenFlow Cortex Search service*
+*Integrating AI-powered chat interface with your Openflow Cortex Search service*
 
 !!! success "What You'll Build"
     A conversational AI agent that can answer questions about your business documents using natural language,
-    powered by the Cortex Search service created by your OpenFlow pipeline.
+    powered by the Cortex Search service created by your Openflow pipeline.
 
 ## Overview
 
-Snowflake Intelligence enables you to create AI agents that can query and analyze your unstructured data using natural language. This guide shows how to connect Snowflake Intelligence to the Cortex Search service created by your OpenFlow unstructured data pipeline.
+Snowflake Intelligence enables you to create AI agents that can query and analyze your unstructured data using natural language. This guide shows how to connect Snowflake Intelligence to the Cortex Search service created by your Openflow unstructured data pipeline.
 
 ### Architecture Integration
 
@@ -27,7 +44,7 @@ The Snowflake Intelligence agent leverages your existing `FESTIVAL_OPS_SEARCH_SE
 
 Before setting up Snowflake Intelligence, ensure you have:
 
-- ✅ **Completed OpenFlow pipeline setup** - Your Cortex Search service must be running and populated with documents
+- ✅ **Completed Openflow pipeline setup** - Your Cortex Search service must be running and populated with documents
 - ✅ **Appropriate Snowflake privileges** - `CREATE AGENT` privilege and access to Cortex Search service
 - ✅ **Default role and warehouse** - Set in your Snowflake user profile
 
@@ -280,7 +297,7 @@ GRANT USAGE ON CORTEX SEARCH SERVICE OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS.FESTIVA
 
 1. **Verify Cortex Search service** is populated with data
 2. **Test search service directly** using SQL queries
-3. **Check document processing status** in OpenFlow
+3. **Check document processing status** in Openflow
 
 **Performance issues:**
 
@@ -317,7 +334,7 @@ Once your Snowflake Intelligence agent is configured:
 4. **Expand to additional use cases** as needed
 
 !!! success "Ready to Use"
-    Your Snowflake Intelligence agent is now connected to your OpenFlow pipeline and ready to answer
+    Your Snowflake Intelligence agent is now connected to your Openflow pipeline and ready to answer
     natural language questions about your business documents!
 
 For more advanced configurations and troubleshooting, refer to the [official Snowflake Intelligence documentation](https://docs.snowflake.com/en/user-guide/snowflake-cortex/snowflake-intelligence).

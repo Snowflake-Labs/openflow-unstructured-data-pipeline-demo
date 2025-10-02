@@ -1,6 +1,23 @@
+<!--
+Copyright 2025 Snowflake Inc.
+SPDX-License-Identifier: Apache-2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # Unstructured Document Intelligence Demo
 
-*Powered by Snowflake OpenFlow and Cortex*
+*Powered by Snowflake Openflow and Cortex*
 
 <div class="grid cards" markdown>
 
@@ -16,7 +33,7 @@
 
     ---
 
-    Interactive walkthrough of the complete Google Drive → OpenFlow → Cortex Search pipeline
+    Interactive walkthrough of the complete Google Drive → Openflow → Cortex Search pipeline
 
     [:octicons-arrow-right-24: Sample Questions](reference/sample-questions.md)
 
@@ -24,7 +41,7 @@
 
     ---
 
-    Detailed configuration for Google Drive, OpenFlow, and Cortex Search
+    Detailed configuration for Google Drive, Openflow, and Cortex Search
 
     [:octicons-arrow-right-24: Setup Guide](getting-started/quick-setup.md)
 
@@ -192,7 +209,7 @@ task copy-all-categories
 !!! info "When Document Conversion is Needed"
     The `convert-all-docs` task is only required if you modify the markdown files in `sample-data/`. The demo includes pre-converted documents ready for upload.
 
-### 2. Snowflake OpenFlow Processing
+### 2. Snowflake Openflow Processing
 
 Configure the **Google Drive Connector** to:
 

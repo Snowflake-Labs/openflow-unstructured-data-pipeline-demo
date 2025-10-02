@@ -1,28 +1,45 @@
-# Setup OpenFlow Connector
+<!--
+Copyright 2025 Snowflake Inc.
+SPDX-License-Identifier: Apache-2.0
 
-Step-by-step visual guide for configuring the Snowflake OpenFlow Google Drive connector with screenshots.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+# Setup Openflow Connector
+
+Step-by-step visual guide for configuring the Snowflake Openflow Google Drive connector with screenshots.
 
 !!! info "Deployment Options"
-    This demo uses **Snowflake OpenFlow on SPCS** (Snowpark Container Services) for simplicity. The same setup can be configured using **Snowflake OpenFlow BYOC** (Bring Your Own Cloud) with identical functionality.
+    This demo uses **Snowflake Openflow on SPCS** (Snowpark Container Services) for simplicity. The same setup can be configured using **Snowflake Openflow BYOC** (Bring Your Own Cloud) with identical functionality.
 
-## Prerequisites: OpenFlow SPCS Deployment
+## Prerequisites: Openflow SPCS Deployment
 
-Before configuring connectors, ensure you have a complete **OpenFlow SPCS deployment and runtime** ready:
+Before configuring connectors, ensure you have a complete **Openflow SPCS deployment and runtime** ready:
 
-![OpenFlow SPCS Overview](../assets/images/openflow_spcs_overview.png)
+![Openflow SPCS Overview](../assets/images/openflow_spcs_overview.png)
 
 **Required Setup (completed by Snowflake Administrator):**
 
-Following the [official Snowflake OpenFlow SPCS setup guide](https://docs.snowflake.com/en/user-guide/data-integration/openflow/setup-openflow-spcs), ensure you have:
+Following the [official Snowflake Openflow SPCS setup guide](https://docs.snowflake.com/en/user-guide/data-integration/openflow/setup-openflow-spcs), ensure you have:
 
 1. **✅ Core Snowflake Configuration** - Admin role, privileges, network configuration
-2. **✅ OpenFlow Deployment Created** - SPCS deployment with optional event table configuration  
+2. **✅ Openflow Deployment Created** - SPCS deployment with optional event table configuration  
 3. **✅ Runtime Role Created** - With external access integrations
 4. **✅ Runtime Created** - Associated with the runtime role
 5. **✅ Deployment Status: Running** - Ready to accept connector configurations
 
 !!! warning "Administrator Setup Required"
-    The OpenFlow SPCS deployment and runtime setup requires **Snowflake Administrator** privileges and must be completed before proceeding with connector configuration. This is typically a one-time setup per environment.
+    The Openflow SPCS deployment and runtime setup requires **Snowflake Administrator** privileges and must be completed before proceeding with connector configuration. This is typically a one-time setup per environment.
 
 ---
 
@@ -35,15 +52,15 @@ Following the [official Snowflake OpenFlow SPCS setup guide](https://docs.snowfl
     - **Google Drive Shared Drive**: `Festival Operations`
     - **Cortex Search Service**: `FESTIVALS_OPS_SEARCH_SERVICE` (auto-created)
 
-## Step 1: Add OpenFlow Connector to Runtime
+## Step 1: Add Openflow Connector to Runtime
 
-Navigate to **OpenFlow** in your Snowflake account and access the connectors list:
+Navigate to **Openflow** in your Snowflake account and access the connectors list:
 
-![OpenFlow Connectors List](../assets/images/openflow_unstruct_connectors_list.png)
+![Openflow Connectors List](../assets/images/openflow_unstruct_connectors_list.png)
 
 **Available Connectors**: Choose "Google Drive" for unstructured document processing and click "Add"
 
-![Add OpenFlow Connector to Runtime](../assets/images/openflow_add_connector_to_runtime.gif)
+![Add Openflow Connector to Runtime](../assets/images/openflow_add_connector_to_runtime.gif)
 
 ## Step 2: Configure Google Drive Source
 
@@ -84,7 +101,7 @@ Configure the Snowflake destination for processed documents:
 - **Snowflake Authentication Strategy**: `SNOWFLAKE_SESSION_TOKEN`
 
 !!! info "SPCS Authentication"
-    With **OpenFlow SPCS deployment**, authentication uses `SNOWFLAKE_SESSION_TOKEN` automatically. The connector inherits your current Snowflake session - no passwords or additional account credentials required.
+    With **Openflow SPCS deployment**, authentication uses `SNOWFLAKE_SESSION_TOKEN` automatically. The connector inherits your current Snowflake session - no passwords or additional account credentials required.
 
 !!! warning "Credential Security"
     **For production environments**: Use credential management solutions to securely store and rotate your GSA JSON keys:
@@ -137,7 +154,7 @@ Define how documents will be processed and ingested (inherits destination settin
 
 Once all parameters are configured, deploy and start the connector:
 
-![OpenFlow Connector in Canvas](../assets/images/openflow_connector_gdrive_in_canvas.png)
+![Openflow Connector in Canvas](../assets/images/openflow_connector_gdrive_in_canvas.png)
 
 **Deployment Steps:**
 

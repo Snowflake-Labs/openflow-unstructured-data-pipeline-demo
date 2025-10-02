@@ -1,21 +1,38 @@
+<!--
+Copyright 2025 Snowflake Inc.
+SPDX-License-Identifier: Apache-2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # Unstructured Document Intelligence Demo
 
-*Powered by Snowflake OpenFlow and Cortex*
+*Powered by Snowflake Openflow and Cortex*
 
-Transform your Google Drive business documents into actionable strategic intelligence with the complete OpenFlow → Cortex Search → Snowflake Intelligence pipeline.
+Transform your Google Drive business documents into actionable strategic intelligence with the complete Openflow → Cortex Search → Snowflake Intelligence pipeline.
 
 ## 🚀 **[→ Access Full Documentation Site](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo)**
 
 *Complete setup guides, business-focused demos, and step-by-step tutorials*
 
-> **⚠️ IMPORTANT PREREQUISITE**: This demo requires **Snowflake OpenFlow**, which is currently available only  
+> **⚠️ IMPORTANT PREREQUISITE**: This demo requires **Snowflake Openflow**, which is currently available only  
 > for **Enterprise accounts** as **BYOC (Bring Your Own Cloud)** or **SPCS (Snowpark Container Services)  
-> Public Preview**. Contact your Snowflake account team to enable OpenFlow access.
+> Public Preview**. Contact your Snowflake account team to enable Openflow access.
 
 ## 🚀 Executive Summary
 
 This demonstration showcases how **Snowflake Intelligence** with **Cortex Search** transforms unstructured business  
-documents from **Google Drive** into queryable strategic intelligence through **OpenFlow** data processing.
+documents from **Google Drive** into queryable strategic intelligence through **Openflow** data processing.
 
 **Business Impact**: Convert scattered business documents (PDFs, presentations, Word docs, images) into a unified  
 intelligence platform that executives can query in natural language to make data-driven decisions.
@@ -31,7 +48,7 @@ reducing time-to-insight by 90% and democratizing access to organizational knowl
 
 📖 **[Professional Documentation](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo)** with:
 
-- **Setup Guides** - Prerequisites, database setup, OpenFlow configuration
+- **Setup Guides** - Prerequisites, database setup, Openflow configuration
 - **Business Demos** - 4 category-specific presentations ready for different audiences  
 - **AI Integration** - Snowflake Intelligence agent setup for conversational queries
 - **Reference Materials** - Sample questions, commands, troubleshooting
@@ -95,7 +112,7 @@ CREATE SCHEMA IF NOT EXISTS OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS;
 
 1. 📋 **[Prerequisites](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/prerequisites/)** - Technical requirements
 2. ⚡ **[Quick Setup](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/quick-setup/)** - 15-minute streamlined setup
-3. 🔧 **[OpenFlow Setup](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/setup-openflow/)** - Connector configuration
+3. 🔧 **[Openflow Setup](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/getting-started/setup-openflow/)** - Connector configuration
 4. 🎯 **[Demo Categories](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo/demos/)** - Business presentations
 
 ---
@@ -182,10 +199,10 @@ graph LR
 **Snowflake Requirements**:
 
 - **Account**: **Enterprise Snowflake account** in AWS Commercial Regions  
-- **OpenFlow**: **Available only for Enterprise accounts as BYOC (Bring Your Own Cloud) or SPCS  
+- **Openflow**: **Available only for Enterprise accounts as BYOC (Bring Your Own Cloud) or SPCS  
   (Snowpark Container Services) Public Preview**
-  - This demo requires Snowflake OpenFlow which is currently in Public Preview
-  - Contact your Snowflake account team to enable OpenFlow access
+  - This demo requires Snowflake Openflow which is currently in Public Preview
+  - Contact your Snowflake account team to enable Openflow access
 - **Service User**: SERVICE type user with key-pair authentication
 - **Secrets Manager**: AWS/Azure/HashiCorp recommended for production
 - **Cortex Search**: Enabled for document intelligence queries
@@ -195,7 +212,7 @@ graph LR
 1. Clone repository (all document formats included)
 2. **Create Google Drive structure**: Use [Google Apps Script](./scripts/google-apps-script/) for automated folder creation
 3. Upload 16 demo documents per [folder structure](./sample-data/google-drive-docs/README.md)
-4. Configure OpenFlow Google Drive connector
+4. Configure Openflow Google Drive connector
 5. Execute natural language queries
 
 ### Document Collection Overview
@@ -216,7 +233,7 @@ graph LR
 
 ### Sample Demo Queries
 
-**Natural language queries for Snowflake Intelligence after OpenFlow-Cortex Search integration**:
+**Natural language queries for Snowflake Intelligence after Openflow-Cortex Search integration**:
 
 ```sql
 -- Strategic Intelligence
@@ -229,7 +246,7 @@ graph LR
 "Show me comprehensive insights across all 16 documents - what patterns emerge?"
 ```
 
-*These queries become available once Google Drive documents are processed through the OpenFlow  
+*These queries become available once Google Drive documents are processed through the Openflow  
 data pipeline and indexed by Cortex Search for intelligent document retrieval.*
 
 ### Technical Implementation Details
@@ -280,7 +297,7 @@ data pipeline and indexed by Cortex Search for intelligent document retrieval.*
 
 ### **Complete Documentation Site**
 
-🌐 **[Snowflake-labs.GitHub.io/OpenFlow-unstructured-data-pipeline-demo](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo)**
+🌐 **[Snowflake-labs.GitHub.io/Openflow-unstructured-data-pipeline-demo](https://snowflake-labs.github.io/openflow-unstructured-data-pipeline-demo)**
 
 The documentation site provides:
 
@@ -311,7 +328,7 @@ The documentation site provides:
 1. **Review** [Architecture](#technical-architecture) and technical requirements
 2. **Examine** [Sample Documents](./sample-data/google-drive-docs/) for data understanding
 3. **Configure** [Cortex Search Service](./sql/cortex_search.sql) per Snowflake requirements
-4. **Implement** OpenFlow Google Drive connector with provided document collection
+4. **Implement** Openflow Google Drive connector with provided document collection
 
 ---
 
@@ -359,10 +376,15 @@ The documentation site provides:
 
 ## 📞 Support & Resources
 
-- 📖 **[Snowflake OpenFlow Docs](https://docs.snowflake.com/en/user-guide/data-load/openflow)**
+- 📖 **[Snowflake Openflow Docs](https://docs.snowflake.com/en/user-guide/data-load/openflow)**
 - 🔍 **[Cortex Search Docs](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-search)**  
 - 🤖 **[Snowflake Intelligence Docs](https://docs.snowflake.com/en/user-guide/snowflake-cortex/snowflake-intelligence)**
 
 ---
 
 ⚠️ **Note**: This demo uses synthetic festival operations data for demonstration purposes. All business scenarios, names, and data are fictional and created specifically for showcasing Snowflake capabilities.
+
+## License
+
+Copyright (c) Snowflake Inc. All rights reserved.
+Licensed under the Apache 2.0 license.

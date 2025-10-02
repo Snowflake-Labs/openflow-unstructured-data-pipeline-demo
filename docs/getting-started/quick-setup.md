@@ -1,6 +1,23 @@
+<!--
+Copyright 2025 Snowflake Inc.
+SPDX-License-Identifier: Apache-2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # Quick Setup
 
-Get your Snowflake OpenFlow demo running in 15 minutes with this streamlined setup guide. This quick setup focuses on the essential components needed to run the demo effectively, skipping optional configurations.
+Get your Snowflake Openflow demo running in 15 minutes with this streamlined setup guide. This quick setup focuses on the essential components needed to run the demo effectively, skipping optional configurations.
 
 !!! warning "Demo Data Disclaimer"
     All business data, financial figures, and organizational information in this demo are fictitious and for demonstration purposes only.
@@ -9,7 +26,7 @@ Get your Snowflake OpenFlow demo running in 15 minutes with this streamlined set
 
 Before starting, ensure you have:
 
-- [ ] **Snowflake Enterprise Account** with OpenFlow enabled
+- [ ] **Snowflake Enterprise Account** with Openflow enabled
 - [ ] **Google Workspace Admin** access  
 - [ ] **Google Cloud Project** with Drive API enabled
 - [ ] **Google Service Account (GSA)** with domain-wide delegation configured
@@ -146,9 +163,9 @@ GRANT USAGE ON WAREHOUSE FESTIVAL_DEMO_S TO ROLE FESTIVAL_DEMO_ROLE;
 GRANT ALL ON DATABASE OPENFLOW_FESTIVAL_DEMO TO ROLE FESTIVAL_DEMO_ROLE;
 ```
 
-### OpenFlow Connector Configuration
+### Openflow Connector Configuration
 
-1. **Access OpenFlow UI** in your Snowflake account
+1. **Access Openflow UI** in your Snowflake account
 2. **Create Google Drive Connector**:
    - Name: `festival_operations_connector`
    - Google Service Account (GSA): Upload your JSON key file
@@ -159,7 +176,7 @@ GRANT ALL ON DATABASE OPENFLOW_FESTIVAL_DEMO TO ROLE FESTIVAL_DEMO_ROLE;
 
 ## Step 5: Cortex Search Intelligence (Automatic)
 
-**Cortex Search service is created automatically** by the OpenFlow Google Drive (Cortex connect) connector. No manual SQL required!
+**Cortex Search service is created automatically** by the Openflow Google Drive (Cortex connect) connector. No manual SQL required!
 
 ### How It Works
 
@@ -196,7 +213,7 @@ SELECT PARSE_JSON(
 ```
 
 !!! info "Service Name"
-    The service will be auto-created as `FESTIVALS_OPS_SEARCH_SERVICE` by OpenFlow after the first document is processed.
+    The service will be auto-created as `FESTIVALS_OPS_SEARCH_SERVICE` by Openflow after the first document is processed.
 
 ## Step 6: Demo Validation (1 minute)
 
@@ -235,7 +252,7 @@ Run these sample queries to verify everything works:
     ```
 
 !!! success "Ready to Use"
-    The service name `FESTIVALS_OPS_SEARCH_SERVICE` will be automatically created by OpenFlow
+    The service name `FESTIVALS_OPS_SEARCH_SERVICE` will be automatically created by Openflow
 
 ## Demo Resources
 
@@ -275,7 +292,7 @@ After setup, you can demonstrate:
 
 ### Common Issues
 
-!!! failure "OpenFlow Connector Not Visible"
+!!! failure "Openflow Connector Not Visible"
     **Solution**: Verify Enterprise account and contact Snowflake support to enable BYOC/SPCS
 
 !!! failure "Google Drive Access Denied"
@@ -285,7 +302,7 @@ After setup, you can demonstrate:
     **Solution**: Verify Cortex Search is enabled in your account region
 
 !!! failure "Documents Not Processing"
-    **Solution**: Check OpenFlow connector logs and verify file permissions
+    **Solution**: Check Openflow connector logs and verify file permissions
 
 ---
 
@@ -313,5 +330,5 @@ After setup, you can demonstrate:
 
 ---
 
-**🎉 Congratulations!** Your Snowflake OpenFlow document intelligence demo is ready. You can now transform
+**🎉 Congratulations!** Your Snowflake Openflow document intelligence demo is ready. You can now transform
 unstructured business documents into queryable strategic intelligence!

@@ -85,3 +85,4 @@ work/
 *.tmp
 *.bak
 *.orig
+.cache
