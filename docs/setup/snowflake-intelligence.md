@@ -38,7 +38,7 @@ graph LR
     E --> F[📊 Business Insights]
 ```
 
-The Snowflake Intelligence agent leverages your existing `FESTIVAL_OPS_SEARCH_SERVICE` Cortex Search service to provide intelligent document analysis capabilities.
+The Snowflake Intelligence agent leverages your existing `CORTEX_SEARCH_SERVICE` (automatically created by the Openflow Google Drive connector) to provide intelligent document analysis capabilities.
 
 ## Prerequisites
 
@@ -84,7 +84,7 @@ SHOW CORTEX SEARCH SERVICES IN SCHEMA FESTIVAL_OPS;
 
 -- Test the search service
 SELECT SNOWFLAKE.CORTEX.SEARCH(
-    'festival_ops_search_service',
+    'CORTEX_SEARCH_SERVICE',
     'expansion strategy AND market analysis'
 ) as search_results;
 ```
@@ -149,7 +149,7 @@ Which documents have the most collaboration and strategic importance?
 
 ### Add Cortex Search Service
 
-![Agent Tools Configuration](../assets/images/si_agent_tools.gif)
+![Agent Tools Configuration](../assets/images/si_agent_tools_defaults.gif)
 
 1. **Navigate to "Tools" tab**
 2. **Find "Cortex Search Services"** section
@@ -158,7 +158,7 @@ Which documents have the most collaboration and strategic importance?
 **Configure the Search Service:**
 
 - **Name:** `FESTIVAL_OPS_INTELLIGENCE`
-- **Search Service:** `OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS.FESTIVAL_OPS_SEARCH_SERVICE`
+- **Search Service:** `OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS.CORTEX_SEARCH_SERVICE`
 - **Description:**
 
   ```
@@ -168,7 +168,7 @@ Which documents have the most collaboration and strategic importance?
 !!! tip "Service Name Format"
     The search service name follows the pattern: `<DATABASE>.<SCHEMA>.<SERVICE_NAME>`
 
-    Based on your setup, this should be: `OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS.FESTIVAL_OPS_SEARCH_SERVICE`
+    Based on your setup, this should be: `OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS.CORTEX_SEARCH_SERVICE`
 
 ## Step 4: Configure Orchestration
 
@@ -243,6 +243,8 @@ Remember that all queries use the user's credentials, so ensure users have appro
 
 **Start with the Example Questions** you configured in your agent - these are specifically tailored to your festival operations data and provide the best introduction to your agent's capabilities.
 
+![Agent Queries](../assets/images/si_queries.gif)
+
 ### Need More Query Ideas
 
 <div class="grid cards" markdown>
@@ -290,7 +292,7 @@ Verify these privileges are properly set:
 -- For the user's default role:
 GRANT USAGE ON DATABASE OPENFLOW_FESTIVAL_DEMO TO ROLE FESTIVAL_DEMO_ROLE;
 GRANT USAGE ON SCHEMA OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS TO ROLE FESTIVAL_DEMO_ROLE;
-GRANT USAGE ON CORTEX SEARCH SERVICE OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS.FESTIVAL_OPS_SEARCH_SERVICE TO ROLE FESTIVAL_DEMO_ROLE;
+GRANT USAGE ON CORTEX SEARCH SERVICE OPENFLOW_FESTIVAL_DEMO.FESTIVAL_OPS.CORTEX_SEARCH_SERVICE TO ROLE FESTIVAL_DEMO_ROLE;
 ```
 
 **Agent not finding documents:**
@@ -315,11 +317,11 @@ USE DATABASE OPENFLOW_FESTIVAL_DEMO;
 SHOW AGENTS IN SCHEMA snowflake_intelligence.agents;
 
 -- Verify search service access
-DESC CORTEX SEARCH SERVICE FESTIVAL_OPS.FESTIVAL_OPS_SEARCH_SERVICE;
+DESC CORTEX SEARCH SERVICE FESTIVAL_OPS.CORTEX_SEARCH_SERVICE;
 
 -- Test direct search functionality
 SELECT SNOWFLAKE.CORTEX.SEARCH(
-    'festival_ops_search_service',
+    'CORTEX_SEARCH_SERVICE',
     'strategy OR planning OR expansion'
 ) as results;
 ```

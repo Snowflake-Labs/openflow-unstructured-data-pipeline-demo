@@ -68,7 +68,7 @@ uv sync
 ls -la sample-data/google-drive-docs/
 ```
 
-You should see the following file structure with **16 business documents** across multiple formats:
+You should see the following file structure with **15 business documents** across multiple formats:
 
 ```
 sample-data/google-drive-docs/
@@ -144,7 +144,72 @@ Check your Google Drive "Festival Operations" shared drive contains:
 - **Compliance/** - Health policies, vendor agreements
 - **Training/** - Customer service materials
 
-## Step 4: Snowflake Configuration (3 minutes)
+## Step 4: Snowflake Configuration (5 minutes)
+
+### External Access Integration Setup
+
+Configure network access for Google Drive API connectivity:
+
+```sql
+-- Create schema for network rules
+USE ROLE ACCOUNTADMIN;
+USE DATABASE OPENFLOW_FESTIVAL_DEMO;
+CREATE SCHEMA IF NOT EXISTS NETWORKS;
+
+-- Create network rule for Google APIs
+CREATE OR REPLACE NETWORK RULE google_network_rule
+  MODE = EGRESS
+  TYPE = HOST_PORT
+  VALUE_LIST = (
+    'admin.googleapis.com',
+    'oauth2.googleapis.com',
+    'www.googleapis.com',
+    'google.com'
+  );
+
+-- Verify the network rule
+DESC NETWORK RULE google_network_rule;
+```
+
+**Optional: Add Google Workspace Domain Rule**
+
+If accessing resources from your specific Google Workspace domain:
+
+```sql
+-- Replace 'your-domain.com' with your actual domain
+CREATE OR REPLACE NETWORK RULE your_workspace_domain_network_rule
+  MODE = EGRESS
+  TYPE = HOST_PORT
+  VALUE_LIST = ('your-domain.com');
+
+-- Verify
+DESC NETWORK RULE your_workspace_domain_network_rule;
+```
+
+**Create External Access Integration:**
+
+```sql
+-- Create external access integration with Google API access
+CREATE OR REPLACE EXTERNAL ACCESS INTEGRATION festival_ops_access_integration
+  ALLOWED_NETWORK_RULES = (
+    OPENFLOW_FESTIVAL_DEMO.NETWORKS.google_network_rule
+    -- Add your workspace domain rule if created:
+    -- , OPENFLOW_FESTIVAL_DEMO.NETWORKS.your_workspace_domain_network_rule
+  )
+  ENABLED = TRUE
+  COMMENT = 'Used for Openflow SPCS runtime to access Google Drive';
+
+-- Verify the integration
+DESC EXTERNAL ACCESS INTEGRATION festival_ops_access_integration;
+
+-- Grant access to Openflow admin role
+GRANT USAGE ON DATABASE OPENFLOW_FESTIVAL_DEMO TO ROLE OPENFLOW_ADMIN;
+GRANT USAGE ON SCHEMA OPENFLOW_FESTIVAL_DEMO.NETWORKS TO ROLE OPENFLOW_ADMIN;
+GRANT USAGE ON INTEGRATION festival_ops_access_integration TO ROLE OPENFLOW_ADMIN;
+```
+
+!!! tip "Network Configuration"
+    The `OPENFLOW_ADMIN` role is created automatically during Openflow SPCS deployment setup. All SQL snippets are also available in `sql/network.sql` in the repository.
 
 ### Database Setup
 

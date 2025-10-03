@@ -181,6 +181,7 @@ nav:
   - Getting Started:
       - Overview: getting-started/index.md
       - Prerequisites: getting-started/prerequisites.md
+      - Openflow SPCS Setup: getting-started/setup-openflow-spcs.md
       - Quick Setup: getting-started/quick-setup.md
       - Setup OpenFlow Connector: getting-started/setup-openflow.md
   - Category Demos:

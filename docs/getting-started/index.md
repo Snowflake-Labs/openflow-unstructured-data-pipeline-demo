@@ -20,7 +20,8 @@ limitations under the License.
 Ready to set up your Snowflake Openflow document intelligence demo? This guide will get you running in 15-30 minutes.
 
 !!! info "What You'll Build"
-    Transform **16 business documents** from Google Drive into queryable intelligence using **Openflow** → **Cortex Search** → **Snowflake Intelligence**
+    Transform **15 business documents** from Google Drive into queryable intelligence using
+    **Openflow** → **Cortex Search** → **Snowflake Intelligence**
 
 !!! warning "Demo Data Notice"
     All data and business information are fictitious and for demonstration purposes only.
@@ -29,7 +30,7 @@ Ready to set up your Snowflake Openflow document intelligence demo? This guide w
 
 <div class="grid cards" markdown>
 
-- :material-list-status:{ .lg .middle } **Prerequisites**
+- :material-list-status:{ .lg .middle } **1. Prerequisites**
 
     ---
 
@@ -37,7 +38,15 @@ Ready to set up your Snowflake Openflow document intelligence demo? This guide w
 
     [:octicons-arrow-right-24: Prerequisites Guide](prerequisites.md)
 
-- :material-lightning-bolt:{ .lg .middle } **Quick Setup**
+- :material-server:{ .lg .middle } **2. Openflow SPCS Setup**
+
+    ---
+
+    **Administrator guide** for setting up Openflow using Snowpark Container Services (one-time setup)
+
+    [:octicons-arrow-right-24: SPCS Setup Guide](setup-openflow-spcs.md)
+
+- :material-lightning-bolt:{ .lg .middle } **3. Quick Setup**
 
     ---
 
@@ -45,7 +54,7 @@ Ready to set up your Snowflake Openflow document intelligence demo? This guide w
 
     [:octicons-arrow-right-24: Quick Setup Guide](quick-setup.md)
 
-- :material-connection:{ .lg .middle } **Setup Openflow Connector**
+- :material-connection:{ .lg .middle } **4. Setup Openflow Connector**
 
     ---
 
@@ -59,11 +68,13 @@ Ready to set up your Snowflake Openflow document intelligence demo? This guide w
 
 | Setup Step | Outcome | Time |
 |------------|---------|------|
-| **Google Drive Setup** | 16 business documents ready for processing | ~5 min |
+| **Prerequisites** | Snowflake account and Google Service Account ready | ~5 min |
+| **Openflow SPCS Setup** | Deployment and runtime infrastructure configured | ~25 min |
+| **Google Drive Setup** | 15 business documents ready for processing | ~5 min |
 | **Openflow Connector** | Automatic document processing + Cortex Search creation | ~5 min |
 | **Snowflake Intelligence** | Natural language queries working | ~5 min |
 
-**Total: 15 minutes to working demo** 🎉
+**Total: ~45 minutes to complete setup** 🎉
 
 ---
 
