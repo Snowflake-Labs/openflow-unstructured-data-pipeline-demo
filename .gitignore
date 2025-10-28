@@ -86,3 +86,4 @@ work/
 *.bak
 *.orig
 .cache
+sql/network_local.sql
